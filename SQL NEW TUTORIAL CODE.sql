@@ -115,14 +115,38 @@ GO
 --Difference between WHERE and HAVING CLAUSE
 
 --Grouping rows using Group BY
-SELECT City, SUM(Salary)
+SELECT City, SUM(Salary) AS [Total Salary]
 FROM EmployeeDemographics
 INNER JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 GROUP BY CITY
 ORDER BY CITY DESC
 
+SELECT City, Gender, SUM(Salary) AS [Total Salary In City], COUNT(City) AS [Total Employees]
+FROM EmployeeDemographics
+INNER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GROUP BY City, Gender 
+ORDER BY City
 
+SELECT *
+FROM EmployeeDemographics
+
+--Filtering Groups
+SELECT Gender, City, SUM(Salary) AS [Total Salary In City], COUNT(City) AS [Total Employee]
+FROM EmployeeDemographics
+INNER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+WHERE Gender = 'Male'
+GROUP BY City, Gender
+
+--Difference between WHERE and HAVING CLAUSE
+SELECT Gender, City, SUM(Salary) AS [Total Salary In City], COUNT(City) AS [Total Employee]
+FROM EmployeeDemographics
+INNER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GROUP BY Gender, City
+HAVING SUM(Salary) > 20000 AND Gender = 'Male'
 
 
 
@@ -195,7 +219,7 @@ GO
 -- Update rows in table 'TableName'
 UPDATE EmployeeDemographics
 SET
-   EmployeeID = 1012
+   Gender = 'Male'
 WHERE Firstname = 'William'
 GO
 
