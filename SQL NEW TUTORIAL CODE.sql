@@ -34,7 +34,7 @@ VALUES
 (
     5, 'Michael', 'mike.com', 2, 25, 'Delta'
 )
-GO
+
 
 --Tutorial 10 (SELECT STATEMENT)
 --Filtering with WHERE CLAUSE
