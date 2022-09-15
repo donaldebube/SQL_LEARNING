@@ -117,9 +117,44 @@ GO
 --Grouping rows using Group BY
 SELECT *
 FROM EmployeeDemographics
+
 INNER JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --To add a column to a pre-existing table
 ALTER TABLE  EmployeeDemographics
@@ -134,10 +169,56 @@ SET
 WHERE EmployeeID in (1002, 1003) --1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1015)
 GO
 
+UPDATE EmployeeDemographics
+SET
+    City = 'Abuja'
+   
+WHERE EmployeeID in (1004, 1007, 1009, 1015) 
+GO
+
+UPDATE EmployeeDemographics
+SET
+    City = 'Lagos'
+   
+WHERE EmployeeID in (1005, 1006, 1008, 1012) 
+GO
+
+UPDATE EmployeeDemographics
+SET
+    City = 'Ibadan'
+   
+WHERE EmployeeID in (1010, 1011) 
+GO
+
+
+-- Update rows in table 'TableName'
+UPDATE EmployeeDemographics
+SET
+   EmployeeID = 1012
+WHERE Firstname = 'William'
+GO
 
 -- Delete rows from table 
 DELETE FROM EmployeeDemographics
-WHERE 	City = 'Abuja'
+WHERE City IN ('Lagos', 'Abuja')
+GO
+
+-- Insert rows into table 'TableName'
+INSERT INTO EmployeeDemographics
+( -- columns to insert data into
+    EmployeeID, Firstname, Lastname, Age, Gender, City
+)
+VALUES
+( -- first row: values for the columns in the list above
+    1001, 'Donald', 'Ebube', 23, 'Male', 'Lagos'
+),
+( -- second row: values for the columns in the list above
+    1002, 'Uju', 'Obi', 27, 'Female', 'Enugu'
+),
+(
+    1003, 'Tommy', 'Shelby', 30, 'Male', 'Kogi'
+),
+-- add more rows here
 GO
 
 
