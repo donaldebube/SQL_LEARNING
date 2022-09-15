@@ -40,6 +40,7 @@ VALUES
 --Filtering with WHERE CLAUSE
 SELECT *
 FROM tblPerson
+GO
 
 --Using the Wild Cards in SQL Server
 
