@@ -115,12 +115,13 @@ GO
 --Difference between WHERE and HAVING CLAUSE
 
 --Grouping rows using Group BY
-SELECT *
+SELECT City, SUM(Salary)
 FROM EmployeeDemographics
-
 INNER JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
-GO
+GROUP BY CITY
+ORDER BY CITY DESC
+
 
 
 
