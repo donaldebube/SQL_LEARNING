@@ -109,3 +109,36 @@ SELECT TOP 50 PERCENT AGE
 FROM tblPerson
 GO
 
+--TUTORIAL 11 (GROUP BY STATEMENT)
+--Grouping rows using Group BY
+--Filtering Groups
+--Difference between WHERE and HAVING CLAUSE
+
+--Grouping rows using Group BY
+SELECT *
+FROM EmployeeDemographics
+INNER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GO
+
+--To add a column to a pre-existing table
+ALTER TABLE  EmployeeDemographics
+ADD City NVARCHAR(50)
+
+--Add different Cities in the new City column
+-- Update rows in table 'EmployeeDemographics'
+UPDATE EmployeeDemographics
+SET
+    City = 'Abuja'
+   
+WHERE EmployeeID in (1002, 1003) --1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1015)
+GO
+
+
+-- Delete rows from table 
+DELETE FROM EmployeeDemographics
+WHERE 	City = 'Abuja'
+GO
+
+
+
