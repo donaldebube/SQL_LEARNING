@@ -416,7 +416,7 @@ GO
 SELECT [Employee ID], COALESCE ( [Middle Name], [Last Name]) AS Name
 FROM tblPerson
 
-
+--See you on Monday
 
 
 
