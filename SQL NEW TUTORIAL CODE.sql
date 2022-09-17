@@ -375,3 +375,5 @@ SELECT E.Name AS [Employee Name], COALESCE(M.Name, 'No Manager') AS [Manager Nam
 FROM tblPerson E
 LEFT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
+
+
