@@ -347,3 +347,31 @@ SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
 FROM tblPerson E
 INNER JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
+
+
+--Tutorial 15 - Different ways to replace NULL in SQL
+--Different ways to replace NULL values
+--ISNULL() Function
+--CASE statement
+--COALESCE() Function
+
+--Using ISNULL() Function
+SELECT E.Name AS [Employee Name], ISNULL (M.Name,'No Manager') AS [Manager Name] 
+FROM tblPerson E
+LEFT JOIN tblPerson M
+ON E.[Manager ID] = M.[Employee ID]
+
+--Using CASE Statement
+SELECT E.Name AS [Employee Name],
+CASE 
+    WHEN M.Name IS NULL THEN 'No Manager' ELSE M.Name
+END
+FROM tblPerson E
+LEFT JOIN tblPerson M
+ON E.[Manager ID] = M.[Employee ID]
+
+--Using COALESCE() Function
+SELECT E.Name AS [Employee Name], COALESCE(M.Name, 'No Manager') AS [Manager Name]
+FROM tblPerson E
+LEFT JOIN tblPerson M
+ON E.[Manager ID] = M.[Employee ID]
