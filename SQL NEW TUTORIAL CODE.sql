@@ -130,7 +130,7 @@ GROUP BY City, Gender
 ORDER BY City
 
 SELECT *
-FROM EmployeeDemographics
+FROM EmployeeSalary
 
 --Filtering Groups
 SELECT Gender, City, SUM(Salary) AS [Total Salary In City], COUNT(City) AS [Total Employee]
@@ -147,6 +147,43 @@ INNER JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 GROUP BY Gender, City
 HAVING SUM(Salary) > 20000 AND Gender = 'Male'
+
+--Tutorial 12 (JOINS)
+--Different types of joins in SQL
+--Cross Join
+--Inner Join
+--Outer Join - Left, Right and Full Outer Join
+
+SELECT Firstname, Lastname, Age, Gender, JobTitle, Salary
+FROM EmployeeDemographics
+LEFT OUTER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GO
+--INNER JOIN SYNTAX
+SELECT *
+FROM EmployeeDemographics
+INNER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GO
+--FULL OUTER JOIN
+SELECT *
+FROM EmployeeDemographics
+FULL OUTER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GO
+
+SELECT *
+FROM EmployeeDemographics
+LEFT OUTER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GO
+
+SELECT *
+FROM EmployeeDemographics
+RIGHT OUTER JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+GO
+
 
 
 
