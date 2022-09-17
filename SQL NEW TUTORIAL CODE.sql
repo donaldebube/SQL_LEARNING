@@ -400,11 +400,11 @@ GO
 -- Update rows in table 'TableName'
 UPDATE tblPerson
 SET
-    [First Name] = 'Richard',
-    [Middle Name] = '',
-    [Last Name] = NULL
+    [First Name] = 'Rachel',
+    [Middle Name] = NULL,
+    [Last Name] = 'Ebube'
     -- add more columns and values here
-WHERE [Employee ID] = 2	/* add search conditions here */
+WHERE [Employee ID] = 6	/* add search conditions here */
 GO
 
 -- Drop 'ColumnName' from table 'TableName' in schema 'SchemaName'
