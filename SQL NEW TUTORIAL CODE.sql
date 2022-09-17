@@ -42,6 +42,72 @@ SELECT *
 FROM tblPerson
 GO
 
+--To add a column to a pre-existing table
+ALTER TABLE  EmployeeDemographics
+ADD City NVARCHAR(50)
+
+--Add different Cities in the new City column
+-- Update rows in table 'EmployeeDemographics'
+UPDATE EmployeeDemographics
+SET
+    City = 'Abuja'
+   
+WHERE EmployeeID in (1002, 1003) --1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1015)
+GO
+
+UPDATE EmployeeDemographics
+SET
+    City = 'Abuja'
+   
+WHERE EmployeeID in (1004, 1007, 1009, 1015) 
+GO
+
+UPDATE EmployeeDemographics
+SET
+    City = 'Lagos'
+   
+WHERE EmployeeID in (1005, 1006, 1008, 1012) 
+GO
+
+UPDATE EmployeeDemographics
+SET
+    City = 'Ibadan'
+   
+WHERE EmployeeID in (1010, 1011) 
+GO
+
+
+-- Update rows in table 'TableName'
+UPDATE EmployeeDemographics
+SET
+   Gender = 'Male'
+WHERE Firstname = 'William'
+GO
+
+-- Delete rows from table 
+DELETE FROM EmployeeDemographics
+WHERE City IN ('Lagos', 'Abuja')
+GO
+
+-- Insert rows into table 'TableName'
+INSERT INTO EmployeeDemographics
+( -- columns to insert data into
+    EmployeeID, Firstname, Lastname, Age, Gender, City
+)
+VALUES
+( -- first row: values for the columns in the list above
+    1001, 'Donald', 'Ebube', 23, 'Male', 'Lagos'
+),
+( -- second row: values for the columns in the list above
+    1002, 'Uju', 'Obi', 27, 'Female', 'Enugu'
+),
+(
+    1003, 'Tommy', 'Shelby', 30, 'Male', 'Kogi'
+),
+-- add more rows here
+GO
+
+
 --Using the Wild Cards in SQL Server
 
 --Instead of using OR function continously to selct particular values, just use IN function
@@ -154,6 +220,7 @@ HAVING SUM(Salary) > 20000 AND Gender = 'Male'
 --Inner Join
 --Outer Join - Left, Right and Full Outer Join
 
+--Different types of joins in SQL
 SELECT Firstname, Lastname, Age, Gender, JobTitle, Salary
 FROM EmployeeDemographics
 LEFT OUTER JOIN EmployeeSalary
@@ -171,117 +238,32 @@ FROM EmployeeDemographics
 FULL OUTER JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 GO
-
+--LEFT OUTER JOIN
 SELECT *
 FROM EmployeeDemographics
 LEFT OUTER JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 GO
-
+--RIGHT OUTER JOIN
 SELECT *
 FROM EmployeeDemographics
 RIGHT OUTER JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 GO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---To add a column to a pre-existing table
-ALTER TABLE  EmployeeDemographics
-ADD City NVARCHAR(50)
-
---Add different Cities in the new City column
--- Update rows in table 'EmployeeDemographics'
-UPDATE EmployeeDemographics
-SET
-    City = 'Abuja'
-   
-WHERE EmployeeID in (1002, 1003) --1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1015)
+--CROSS JOIN
+--It produces the cartesian product of the 2 tables involved in the join.
+--Cross Join shouldn't have an ON clause
+--It simply multiplies the rows of the two tables and gives the total number of rows after multiplication
+SELECT *
+FROM EmployeeDemographics
+CROSS JOIN EmployeeSalary 
 GO
 
-UPDATE EmployeeDemographics
-SET
-    City = 'Abuja'
-   
-WHERE EmployeeID in (1004, 1007, 1009, 1015) 
-GO
-
-UPDATE EmployeeDemographics
-SET
-    City = 'Lagos'
-   
-WHERE EmployeeID in (1005, 1006, 1008, 1012) 
-GO
-
-UPDATE EmployeeDemographics
-SET
-    City = 'Ibadan'
-   
-WHERE EmployeeID in (1010, 1011) 
-GO
-
-
--- Update rows in table 'TableName'
-UPDATE EmployeeDemographics
-SET
-   Gender = 'Male'
-WHERE Firstname = 'William'
-GO
-
--- Delete rows from table 
-DELETE FROM EmployeeDemographics
-WHERE City IN ('Lagos', 'Abuja')
-GO
-
--- Insert rows into table 'TableName'
-INSERT INTO EmployeeDemographics
-( -- columns to insert data into
-    EmployeeID, Firstname, Lastname, Age, Gender, City
-)
-VALUES
-( -- first row: values for the columns in the list above
-    1001, 'Donald', 'Ebube', 23, 'Male', 'Lagos'
-),
-( -- second row: values for the columns in the list above
-    1002, 'Uju', 'Obi', 27, 'Female', 'Enugu'
-),
-(
-    1003, 'Tommy', 'Shelby', 30, 'Male', 'Kogi'
-),
--- add more rows here
-GO
-
+---IN SUMMARY
+--CROSS JOIN (RETURNS CARTESIAN PRODUCT OF THE TABLES INVOLVED IN THE JOIN)
+--INNER JOIN (RETURNS ONLY THE MATCHING ROWS. NON MATCHING ROWS ARE ELIMINATED)
+--LEFT JOIN (RETURNS ALL THE MATCHING ROWS + NON MATCHING ROWS FROM THE LEFT TABLE)
+--RIGHT JOIN (RETURNS ALL THE MATCHING ROWS + NON MATCHING ROWS FROM THE RIGHT TABLE)
+--FULL JOIN (RETURNS ALL ROWS FROM BOTH TABLES, INCLUDING THE NON-MATCHING ROWS)
 
 
