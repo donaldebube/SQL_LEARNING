@@ -293,4 +293,7 @@ FROM EmployeeDemographics
 RIGHT JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 WHERE EmployeeSalary.EmployeeID IS NOT NULL
- 
+
+
+
+--Practice Tutorial 14,15,16 and 17 next
