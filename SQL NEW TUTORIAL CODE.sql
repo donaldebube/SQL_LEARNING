@@ -267,3 +267,30 @@ GO
 --FULL JOIN (RETURNS ALL ROWS FROM BOTH TABLES, INCLUDING THE NON-MATCHING ROWS)
 
 
+
+--Tutorial 13 (Advanced JOINS)
+--Advanced or intelligent joins in SQL 
+--Retrieve only the non matching rows from the left table
+--Retrieve only the non matching rows from the right table
+--Retrieve only the non matching rows from both the left and right table
+
+--Retrieve only the non matching rows from the left table
+SELECT *
+FROM EmployeeDemographics
+LEFT JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+WHERE EmployeeSalary.EmployeeID is NULL
+
+--Retrieve only the non matching rows from the right table
+SELECT *
+FROM EmployeeDemographics
+RIGHT JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+WHERE EmployeeSalary.EmployeeID IS  NULL
+
+SELECT *
+FROM EmployeeDemographics
+RIGHT JOIN EmployeeSalary
+    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+WHERE EmployeeSalary.EmployeeID IS NOT NULL
+ 
