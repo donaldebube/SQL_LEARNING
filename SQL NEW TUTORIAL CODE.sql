@@ -380,19 +380,19 @@ ON E.[Manager ID] = M.[Employee ID]
 --Tutorial 16 - COALESCE Function
 --COALESCE Function returns the first NON NULL value
 
---Add new columns
+--Verify Columns
 SELECT *
 FROM tblPerson
 
--- Add a new column 'NewColumnName' to table 'TableName' in schema 'SchemaName'
+-- Add a new column to table 
 ALTER TABLE tblPerson
     ADD [Middle Name] /*new_column_name*/ NVARCHAR(50) /*new_column_datatype*/ NULL /*new_column_nullability*/
 GO
-
+-- Add a new column to table 
 ALTER TABLE tblPerson
     ADD [Last Name] /*new_column_name*/ NVARCHAR(50) /*new_column_datatype*/ NULL /*new_column_nullability*/
 GO
-
+-- Add a new column to table 
 ALTER TABLE tblPerson
     ADD [First Name] /*new_column_name*/ NVARCHAR(50) /*new_column_datatype*/ NULL /*new_column_nullability*/
 GO
@@ -401,8 +401,8 @@ GO
 UPDATE tblPerson
 SET
     [First Name] = 'Rachel',
-    [Middle Name] = NULL,
-    [Last Name] = 'Ebube'
+    [Middle Name] = 'Tosin',
+    [Last Name] = NULL
     -- add more columns and values here
 WHERE [Employee ID] = 6	/* add search conditions here */
 GO
@@ -412,12 +412,12 @@ ALTER TABLE tblPerson
     DROP COLUMN "[First Name]"
 GO
 
+--COALESCE Function returns the first NON NULL value
+SELECT [Employee ID], COALESCE ( [Middle Name], [Last Name]) AS Name
+FROM tblPerson
 
 
--- Tom
--- Richard
--- Amanda
--- Tolu
--- Michael
--- Rachel
+
+
+
 
