@@ -105,8 +105,36 @@ VALUES
     1003, 'Tommy', 'Shelby', 30, 'Male', 'Kogi'
 ),
 -- add more rows here
+
+--Change column name
+EXEC sp_rename 'tblPerson.Employee ID1', 'Employee ID' --'COLUMN'
+
+--Add Column
+ALTER TABLE tblPerson
+ADD [MANAGER ID] VARCHAR(50)
+
+EXEC sp_rename 'tblPerson.MANAGER ID', 'Manager ID'
+
+--Input information into new column
+UPDATE tblPerson
+SET
+   [Manager ID] = NULL
+WHERE Name = 'Rachel'
 GO
 
+-- Insert rows into table 'tblPerson'
+INSERT INTO tblPerson
+( -- columns to insert data into
+    [Employee ID], Name, Email, GenderID, Age, City, [Manager ID]
+)
+VALUES
+( -- first row: values for the columns in the list above
+    6, 'Rachel', 'Rac.com', 2, 25, 'Lisbon', ''
+)
+GO
+
+SELECT *
+FROM tblPerson
 
 --Using the Wild Cards in SQL Server
 
@@ -295,5 +323,29 @@ RIGHT JOIN EmployeeSalary
 WHERE EmployeeSalary.EmployeeID IS NOT NULL
 
 
-
 --Practice Tutorial 14,15,16 and 17 next
+
+--Tutorial 14 (Self Join)
+--Self Join is simply joining a table with itself.
+SELECT *
+FROM tblPerson
+
+--Left Self Join
+SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
+FROM tblPerson E
+LEFT JOIN tblPerson M
+ON E.[Manager ID] = M.[Employee ID]
+
+--Right Self Join
+SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
+FROM tblPerson E
+RIGHT JOIN tblPerson M
+ON E.[Manager ID] = M.[Employee ID]
+
+--Inner Self Join
+SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
+FROM tblPerson E
+INNER JOIN tblPerson M
+ON E.[Manager ID] = M.[Employee ID]
+
+
