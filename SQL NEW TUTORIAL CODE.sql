@@ -349,3 +349,7 @@ INNER JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
 
 
+SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
+FROM tblPerson E
+INNER JOIN tblPerson M
+ON E.[Manager ID] = M.[Employee ID]
