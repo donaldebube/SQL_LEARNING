@@ -377,3 +377,47 @@ LEFT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
 
 
+--Tutorial 16 - COALESCE Function
+--COALESCE Function returns the first NON NULL value
+
+--Add new columns
+SELECT *
+FROM tblPerson
+
+-- Add a new column 'NewColumnName' to table 'TableName' in schema 'SchemaName'
+ALTER TABLE tblPerson
+    ADD [Middle Name] /*new_column_name*/ NVARCHAR(50) /*new_column_datatype*/ NULL /*new_column_nullability*/
+GO
+
+ALTER TABLE tblPerson
+    ADD [Last Name] /*new_column_name*/ NVARCHAR(50) /*new_column_datatype*/ NULL /*new_column_nullability*/
+GO
+
+ALTER TABLE tblPerson
+    ADD [First Name] /*new_column_name*/ NVARCHAR(50) /*new_column_datatype*/ NULL /*new_column_nullability*/
+GO
+
+-- Update rows in table 'TableName'
+UPDATE tblPerson
+SET
+    [First Name] = 'Richard',
+    [Middle Name] = '',
+    [Last Name] = NULL
+    -- add more columns and values here
+WHERE [Employee ID] = 2	/* add search conditions here */
+GO
+
+-- Drop 'ColumnName' from table 'TableName' in schema 'SchemaName'
+ALTER TABLE tblPerson
+    DROP COLUMN "[First Name]"
+GO
+
+
+
+-- Tom
+-- Richard
+-- Amanda
+-- Tolu
+-- Michael
+-- Rachel
+
