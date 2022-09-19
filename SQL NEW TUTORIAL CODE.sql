@@ -445,4 +445,14 @@ CREATE TABLE tblIndiaCustomers
 );
 GO
 
+CREATE TABLE tblUKCustomers
+(
+    TableNameId INT NOT NULL PRIMARY KEY, -- primary key column
+    ID [NUMERIC] NOT NULL,
+    Name [NVARCHAR](50) NOT NULL,
+    Email [NVARCHAR](50) NOT NULL
+    -- specify more columns here
+);
+GO
+
 
