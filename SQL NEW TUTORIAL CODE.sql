@@ -444,7 +444,8 @@ CREATE TABLE tblIndiaCustomers
 );
 GO
 
-ALTER TABLE
+ALTER TABLE tblIndianCustomers
+REMOVE [ID] NUMERIC
 
 
 --Add Values
