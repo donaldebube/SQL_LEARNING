@@ -437,12 +437,33 @@ FROM tblPerson
 
 CREATE TABLE tblIndiaCustomers
 (
-    TableNameId INT NOT NULL PRIMARY KEY, -- primary key column
-    ID [NUMERIC] NOT NULL,
+    ID INT NOT NULL PRIMARY KEY, -- primary key column
     Name [NVARCHAR](50) NOT NULL,
     Email [NVARCHAR](50) NOT NULL
     -- specify more columns here
 );
+GO
+
+ALTER TABLE
+
+
+--Add Values
+--Insert rows into table 'TableName'
+INSERT INTO tblIndiaCustomers
+( -- columns to insert data into
+ [ID], [Name], [Email]
+)
+VALUES
+( -- first row: values for the columns in the list above
+ 1, 'John', 'john@yahoo.com'
+),
+( -- second row: values for the columns in the list above
+ 2, 'Michael', 'mike@gmail.com'
+),
+( -- second row: values for the columns in the list above
+ 3, 'Rachel', 'rach@hotmail.com'
+)
+
 GO
 
 CREATE TABLE tblUKCustomers
@@ -455,4 +476,5 @@ CREATE TABLE tblUKCustomers
 );
 GO
 
-
+SELECT *
+FROM tblIndiaCustomers
