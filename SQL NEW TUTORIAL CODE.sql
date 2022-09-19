@@ -432,7 +432,16 @@ FROM tblPerson
 SELECT * 
 FROM tblPerson
 
---Create new tables for this lesson
+--Create new tables for this lessonNew
+-- Create a new table called 'TableName' in schema 'SchemaName'
 
+CREATE TABLE shortlet
+(
+    TableNameId INT NOT NULL PRIMARY KEY, -- primary key column
+    Column1 [NVARCHAR](50) NOT NULL,
+    Column2 [NVARCHAR](50) NOT NULL
+    -- specify more columns here
+);
+GO
 
 
