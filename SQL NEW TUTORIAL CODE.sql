@@ -418,6 +418,19 @@ FROM tblPerson
 
 --See you on Monday
 
+--Part 17 - UNION and UNIOIN ALL
+--Purpose of UNION and UNION ALL
+--Difference between UNION and UNION ALL
+--Difference between JOIN and UNION
+
+
+--Purpose of UNION and UNION ALL
+--UNION and UNION ALL operators in SQL server are used to combine the result-set of two or more SELECT queeries
+
+ --UNION joins two tables with same number, data types and the order of the columns in the select statement.
+--UNION ALL gets all the duplicates 
+SELECT * 
+FROM tblPerson
 
 
 
