@@ -432,5 +432,7 @@ FROM tblPerson
 SELECT * 
 FROM tblPerson
 
+--Create new tables for this lesson
+
 
 
