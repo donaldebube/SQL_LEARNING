@@ -435,11 +435,12 @@ FROM tblPerson
 --Create new tables for this lessonNew
 -- Create a new table called 'TableName' in schema 'SchemaName'
 
-CREATE TABLE shortlet
+CREATE TABLE tblIndiaCustomers
 (
     TableNameId INT NOT NULL PRIMARY KEY, -- primary key column
-    Column1 [NVARCHAR](50) NOT NULL,
-    Column2 [NVARCHAR](50) NOT NULL
+    ID [NUMERIC] NOT NULL,
+    Name [NVARCHAR](50) NOT NULL,
+    Email [NVARCHAR](50) NOT NULL
     -- specify more columns here
 );
 GO
