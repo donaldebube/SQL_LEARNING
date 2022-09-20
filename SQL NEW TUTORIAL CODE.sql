@@ -444,9 +444,15 @@ CREATE TABLE tblIndiaCustomers
 );
 GO
 
-ALTER TABLE tblIndianCustomers
-REMOVE [ID] NUMERIC
+--Delete the ID column in tblIndiaCustomers
+ALTER TABLE tblIndiaCustomers
+DROP COLUMN ID
 
+--Change the name of the column
+EXEC sp_rename 'tblIndiaCustomers.TableNameId', 'ID'
+
+SELECT *
+FROM tblIndiaCustomers
 
 --Add Values
 --Insert rows into table 'TableName'
@@ -478,4 +484,6 @@ CREATE TABLE tblUKCustomers
 GO
 
 SELECT *
-FROM tblIndiaCustomers
+FROM tblUKCustomers
+
+--Delete unwanted row
