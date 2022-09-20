@@ -487,3 +487,40 @@ SELECT *
 FROM tblUKCustomers
 
 --Delete unwanted row
+ALTER TABLE tblUKCustomers
+DROP COLUMN ID
+
+--Rename the column name
+EXEC sp_rename 'tblUKCustomers.TableNameId', 'ID'
+
+--Add values
+-- Insert rows into table 'TableName'
+INSERT INTO tblUKCustomers
+( -- columns to insert data into
+ ID, Name, Email
+)
+VALUES
+( -- first row: values for the columns in the list above
+ 1, 'John', 'john@yahoo.com'
+),
+( -- second row: values for the columns in the list above
+ 2, 'Michael', 'mike@gmail.com'
+),
+( -- second row: values for the columns in the list above
+ 3, 'Donald', 'rach@hotmail.com'
+)
+GO
+
+--Using the UNION statement
+SELECT *
+FROM tblIndiaCustomers
+UNION
+SELECT *
+FROM tblUKCustomers
+
+--Using the UNION ALL statement
+SELECT *
+FROM tblIndiaCustomers
+UNION ALL
+SELECT *
+FROM tblUKCustomers
