@@ -567,6 +567,9 @@ GO
 EXECUTE spGetEmployeesByGenderAndFirstname 'Male', 'Donald'
 GO
 
+--Altering SP
+EXEC spGetEmployeesByGenderAndFirstname @firstname = 'Amanda', @gender = 'Female'
+
 --Viewing the text of the SP
 --To get the code (text) behind the stored procedure
 
