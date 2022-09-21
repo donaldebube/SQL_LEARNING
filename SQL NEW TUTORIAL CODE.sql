@@ -566,3 +566,8 @@ GO
 -- example to execute the stored procedure we just created
 EXECUTE spGetEmployeesByGenderAndFirstname 'Male', 'Donald'
 GO
+
+--Viewing the text of the SP
+--To get the code (text) behind the stored procedure
+
+EXEC sp_helptext spGetEmployeesByGenderAndFirstname
