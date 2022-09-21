@@ -605,3 +605,25 @@ GO
 
 EXEC sp_helptext spGetEmployeesBasicInfo
 GO
+
+--Part 19 - Stored procedures with output parameters
+--Creating and executing stored procedures with output parameters
+--Learn about some of the useful system stored procedures.
+
+--Creating and executing stored procedures with output parameters
+CREATE PROC spGetEmployeeCountByGender
+@Gender NVARCHAR(50),
+@GenderCount INT OUTPUT
+AS
+    SELECT @GenderCount = COUNT(EmployeeID)
+    FROM EmployeeDemographics
+    WHERE Gender = @Gender
+GO
+
+DECLARE @TotalCount INT
+EXEC spGetEmployeeCountByGender 'Male', @TotalCount output
+PRINT @TotalCount
+GO
+
+SELECT *
+FROM EmployeeDemographics
