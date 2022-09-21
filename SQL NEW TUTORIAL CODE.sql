@@ -524,3 +524,31 @@ FROM tblIndiaCustomers
 UNION ALL
 SELECT *
 FROM tblUKCustomers
+GO
+
+--Part 18 - Stored Procedures
+--What is a stored procedure
+--Stored procedure example
+--Creating a stored procedure with parametres
+--Altering SP
+--Viewing the text of the SP
+--Dropping the SP
+
+--Example 1:
+
+-- Create a new stored procedure called 'StoredProcedureName' in schema 'SchemaName'
+CREATE PROCEDURE spGetEmployeesBasicInfo
+AS
+BEGIN
+    SELECT Firstname, Lastname, Gender
+    FROM EmployeeDemographics
+END
+GO
+
+--To run the stored procedure, just type the name of the 
+--stored proedure and run it
+spGetEmployeesBasicInfo
+
+SELECT *
+FROM EmployeeDemographics
+
