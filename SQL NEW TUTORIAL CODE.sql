@@ -548,7 +548,21 @@ GO
 --To run the stored procedure, just type the name of the 
 --stored proedure and run it
 spGetEmployeesBasicInfo
+GO
 
-SELECT *
-FROM EmployeeDemographics
 
+--Creating a stored procedure with parametres
+
+-- Create the stored procedure in the specified schema
+CREATE PROCEDURE spGetEmployeesByGenderAndFirstname
+    @Gender NVARCHAR(50),
+    @Firstname NVARCHAR(50)
+AS
+    -- body of the stored procedure
+    SELECT Firstname, Lastname, Gender, Age
+    FROM EmployeeDemographics
+    WHERE Gender = @Gender AND Firstname = @Firstname 
+GO
+-- example to execute the stored procedure we just created
+EXECUTE spGetEmployeesByGenderAndFirstname 'Male', 'Donald'
+GO
