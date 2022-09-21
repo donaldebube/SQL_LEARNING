@@ -574,3 +574,34 @@ EXEC spGetEmployeesByGenderAndFirstname @firstname = 'Amanda', @gender = 'Female
 --To get the code (text) behind the stored procedure
 
 EXEC sp_helptext spGetEmployeesByGenderAndFirstname
+GO
+
+--Change definition of the Store Procedure by using the ALTER statement
+ALTER PROC spGetEmployeesBasicInfo
+AS
+    SELECT Firstname, Lastname, Gender
+    FROM EmployeeDemographics
+    ORDER by Firstname DESC
+GO
+
+--Running an SP
+EXEC spGetEmployeesBasicInfo
+GO
+
+--Dropping the SP
+DROP PROCEDURE spGetEmployeesByGenderAndFirstname
+GO
+
+--Encrypting an SP
+ALTER PROC spGetEmployeesBasicInfo
+WITH ENCRYPTION
+AS  
+BEGIN
+    SELECT Firstname, Lastname, Gender
+    FROM EmployeeDemographics
+    ORDER BY Firstname
+END
+GO
+
+EXEC sp_helptext spGetEmployeesBasicInfo
+GO
