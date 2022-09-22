@@ -691,3 +691,48 @@ GO
 DECLARE @Total INT
 EXEC @Total = spGetTotalCount2
 PRINT @Total
+GO
+
+--Stored Procedure Example
+CREATE PROC spGetNameByID11
+@EmployeeID INT,
+@Name NVARCHAR (50) OUTPUT
+AS
+BEGIN
+    SELECT @Name = [Full Name]
+    FROM EmployeeDemographics
+    WHERE @EmployeeID = EmployeeID
+END
+GO
+--Delete Stored Procedure
+DROP PROCEDURE spGetNameByID1
+GO
+
+DECLARE @Name NVARCHAR (50)
+EXEC  spGetNameByID11 1001, @Name OUTPUT
+PRINT '[Full Name] =' + @Name
+
+ALTER TABLE EmployeeDemographics
+    ADD [Full Name] NVARCHAR (100)
+GO
+
+-- Update rows in table 'TableName'
+UPDATE EmployeeDemographics
+SET
+    [Full Name] = CONCAT(Firstname, ' ', Lastname)
+WHERE 	EmployeeID = 1004
+        -- EmployeeID = 1007 AND 
+        -- EmployeeID = 1008 AND 
+        -- EmployeeID = 1009 AND 
+        -- EmployeeID = 1010 AND 
+        -- EmployeeID = 1011 AND 
+        -- EmployeeID = 1012 AND 
+        -- EmployeeID = 1013 AND 
+        -- EmployeeID = 1014 AND 
+        -- EmployeeID = 1005 AND 
+        -- EmployeeID = 1004
+GO
+
+SELECT *
+FROM EmployeeDemographics
+ORDER BY EmployeeID
