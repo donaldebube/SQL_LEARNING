@@ -760,3 +760,10 @@ WHERE 	EmployeeID = 1004
         -- EmployeeID = 1004
 GO
 
+--Part 21 -- Advantages of Stored Procedures
+--Advantages of using Stored Procedures over adhoc queries (inline SQL)
+-- 1.) Execution plan and reusablity
+-- 2.) Reduce network traffic
+-- 3.) Code reusability and better maintainability
+-- 4.) Better Security
+-- 5.) Avoids SQL injection attack
