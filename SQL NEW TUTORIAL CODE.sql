@@ -727,7 +727,7 @@ END
 GO
 
 DECLARE @Name NVARCHAR (50)
-EXEC  spGetNameByID13 1001, @Name OUTPUT
+EXEC  spGetNameByID13 1002, @Name OUTPUT
 PRINT '[Full Name] =' + @Name
 GO
 
