@@ -695,8 +695,27 @@ GO
 
 
 --NOTE: OUTPUT PARAMETERS CAN USE ANY DATATYPE (INT, NVARCHAR)
---Stored Procedure WITH OUTPUT PARAMETERS Example
+--Stored Procedure WITH OUTPUT PARAMETERS Example WITH ENCRYPTION
 CREATE PROC spGetNameByID11
+@EmployeeID INT,
+@Name NVARCHAR (50) OUTPUT
+WITH ENCRYPTION
+AS
+BEGIN
+    SELECT @Name = [Full Name]
+    FROM EmployeeDemographics
+    WHERE @EmployeeID = EmployeeID
+END
+GO
+
+--Run Stored Proc
+DECLARE @Name NVARCHAR (50)
+EXEC  spGetNameByID11 1001, @Name OUTPUT
+PRINT '[Full Name] =' + @Name
+GO
+
+--Stored Procedure WITH OUTPUT PARAMETERS Example WITHOUT ENCRYPTION
+CREATE PROC spGetNameByID13
 @EmployeeID INT,
 @Name NVARCHAR (50) OUTPUT
 AS
@@ -706,18 +725,21 @@ BEGIN
     WHERE @EmployeeID = EmployeeID
 END
 GO
---Delete Stored Procedure
-DROP PROCEDURE spGetNameByID1
-GO
---Run Stored Proc
+
 DECLARE @Name NVARCHAR (50)
-EXEC  spGetNameByID11 1001, @Name OUTPUT
+EXEC  spGetNameByID13 1001, @Name OUTPUT
 PRINT '[Full Name] =' + @Name
+GO
+
+
+-- Drop the stored procedure called 'StoredProcedureName' in schema 'SchemaName'
+DROP PROCEDURE spGetNameByID11
 GO
 
 --Return value example
 CREATE PROC spGetNameByID12
 @EmployeeID INT
+WITH ENCRYPTION
 AS
 BEGIN
     RETURN
@@ -734,8 +756,6 @@ GO
 DECLARE @EmployeeName
 EXEC @EmployeeName = spGetNameByID12 1001
 PRINT 'Name of the Employee =' + @Total
-
-
 
 
 --Add New Column to table
