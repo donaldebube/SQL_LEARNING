@@ -99,13 +99,38 @@ VALUES
     1001, 'Donald', 'Ebube', 23, 'Male', 'Lagos'
 ),
 ( -- second row: values for the columns in the list above
-    1002, 'Uju', 'Obi', 27, 'Female', 'Enugu'
+    1004, 'Cynthia', 'Ade', 27, 'Female', 'Ogun'
 ),
 (
-    1003, 'Tommy', 'Shelby', 30, 'Male', 'Kogi'
+    1005, 'Olu', 'Maintain', 26, 'Male', 'Osun'
 ),
+(
+    1006, 'Mayor', 'DMW', 23, 'Male', 'Lagos'
+),
+(
+    1007, 'Ikenna', 'Roland', 60, 'Male', 'Abia'
+),
+(
+    1008, 'Hermes', 'Hater', 30, 'Male', 'Kaduna'
+),
+(
+    1009, 'Chioma', 'Ada', 22, 'Female', 'Imo'
+),
+(
+    1012, 'Carren', 'Aka', 24, 'Female', 'Imo'
+),
+(
+    1013, 'Bethel', 'Hum', 29, 'Female', 'Ogun'
+),
+(
+    1014, 'Adamu', 'Just', 27, 'Male', 'Kastina'
+)
 -- add more rows here
+GO
 
+SELECT *
+FROM EmployeeDemographics
+ORDER BY EmployeeID
 --Change column name
 EXEC sp_rename 'tblPerson.Employee ID1', 'Employee ID' --'COLUMN'
 
@@ -627,3 +652,37 @@ GO
 
 SELECT *
 FROM EmployeeDemographics
+GO
+
+--Part 20 - Stored procedure output parameters or return values
+--Understand what are stored procedures return values
+--Difference between stored procedure, return values and output parameters
+--When to use output parameters over return values
+
+--Stored Procedure Example
+CREATE PROC spGetTotalCount1
+@TotalCount INT OUTPUT
+AS
+BEGIN
+    SELECT @TotalCount = COUNT(EmployeeID)
+    FROM EmployeeDemographics
+END
+GO
+
+--Run the stored procedure
+DECLARE @TotalCount INT
+EXEC spGetTotalCount1 @TotalCount OUTPUT
+PRINT @TotalCount
+GO
+--Return Values Example
+CREATE PROC spGetTotalCount2
+AS
+BEGIN
+    RETURN
+    (
+        SELECT COUNT(EmployeeID)
+        FROM EmployeeDemographics
+    )
+END
+GO
+
