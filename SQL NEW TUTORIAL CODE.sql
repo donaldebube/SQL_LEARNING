@@ -693,7 +693,9 @@ EXEC @Total = spGetTotalCount2
 PRINT @Total
 GO
 
---Stored Procedure Example
+
+--NOTE: OUTPUT PARAMETERS CAN USE ANY DATATYPE (INT, NVARCHAR)
+--Stored Procedure WITH OUTPUT PARAMETERS Example
 CREATE PROC spGetNameByID11
 @EmployeeID INT,
 @Name NVARCHAR (50) OUTPUT
@@ -711,8 +713,27 @@ GO
 DECLARE @Name NVARCHAR (50)
 EXEC  spGetNameByID11 1001, @Name OUTPUT
 PRINT '[Full Name] =' + @Name
+GO
 
+--Return value example
+CREATE PROC spGetNameByID12
+@EmployeeID INT
+AS
+BEGIN
+    RETURN
+    (
+        SELECT [Full Name]
+        FROM EmployeeDemographics
+        WHERE @EmployeeID = EmployeeID
+    )
+END
+GO
 
+--NOTE: RETURN VALUES ARE USED TO ONLY RETURN AN INTEGER
+--Run Return Value
+DECLARE @EmployeeName
+EXEC @EmployeeName = spGetNameByID12 1001
+PRINT 'Name of the Employee =' + @Total
 
 
 
