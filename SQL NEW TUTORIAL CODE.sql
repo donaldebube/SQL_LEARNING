@@ -707,11 +707,17 @@ GO
 --Delete Stored Procedure
 DROP PROCEDURE spGetNameByID1
 GO
-
+--Run Stored Proc
 DECLARE @Name NVARCHAR (50)
 EXEC  spGetNameByID11 1001, @Name OUTPUT
 PRINT '[Full Name] =' + @Name
 
+
+
+
+
+
+--Add New Column to table
 ALTER TABLE EmployeeDemographics
     ADD [Full Name] NVARCHAR (100)
 GO
@@ -733,6 +739,3 @@ WHERE 	EmployeeID = 1004
         -- EmployeeID = 1004
 GO
 
-SELECT *
-FROM EmployeeDemographics
-ORDER BY EmployeeID
