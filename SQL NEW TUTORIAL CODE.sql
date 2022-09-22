@@ -674,6 +674,7 @@ DECLARE @TotalCount INT
 EXEC spGetTotalCount1 @TotalCount OUTPUT
 PRINT @TotalCount
 GO
+
 --Return Values Example
 CREATE PROC spGetTotalCount2
 AS
@@ -686,3 +687,7 @@ BEGIN
 END
 GO
 
+--Run Return values
+DECLARE @Total INT
+EXEC @Total = spGetTotalCount2
+PRINT @Total
