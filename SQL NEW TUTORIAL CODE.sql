@@ -767,7 +767,7 @@ GO
 UPDATE EmployeeDemographics
 SET
     [Full Name] = CONCAT(Firstname, ' ', Lastname)
-WHERE 	EmployeeID = 1004
+WHERE 	EmployeeID = 1014
         -- EmployeeID = 1007 AND 
         -- EmployeeID = 1008 AND 
         -- EmployeeID = 1009 AND 
@@ -812,14 +812,18 @@ BEGIN
 END
 
 --Using LTRIM function to remove blanks on the left handside of the given character expression
-
-SELECT *
+SELECT EmployeeID, LTRIM(Firstname) AS [First Name], Lastname AS [Last Name]
 FROM EmployeeDemographics
+ORDER BY EmployeeID
 
+--Using RTRIM function to remove blanks on the right handside of the given character expression
+
+--Side Distraction
 -- Update rows in table 'TableName'
 UPDATE EmployeeDemographics
 SET
-    [Firstname] = '     Tommy'
+    [Firstname] = '     Cynthia'
   
-WHERE EmployeeID = 1003	/* add search conditions here */
+WHERE EmployeeID = 10	/* add search conditions here */
 GO
+
