@@ -832,3 +832,4 @@ SET
 WHERE EmployeeID = 101	/* add search conditions here */
 GO
 
+--Part 25 - DateTime Functions in SQL
