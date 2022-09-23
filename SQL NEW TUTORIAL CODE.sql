@@ -816,14 +816,19 @@ SELECT EmployeeID, LTRIM(Firstname) AS [First Name], Lastname AS [Last Name]
 FROM EmployeeDemographics
 ORDER BY EmployeeID
 
+SELECT *
+FROM EmployeeDemographics
+
 --Using RTRIM function to remove blanks on the right handside of the given character expression
+SELECT EmployeeID , RTRIM(Firstname) AS [First Name], LTRIM(Firstname) AS [First Name]
+FROM EmployeeDemographics
 
 --Side Distraction
 -- Update rows in table 'TableName'
 UPDATE EmployeeDemographics
 SET
-    [Firstname] = '     Cynthia'
+    [Firstname] = '     Aadamu       '
   
-WHERE EmployeeID = 10	/* add search conditions here */
+WHERE EmployeeID = 101	/* add search conditions here */
 GO
 
