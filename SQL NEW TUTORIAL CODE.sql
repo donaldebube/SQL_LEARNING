@@ -811,3 +811,15 @@ BEGIN
     SET @start = @start +1
 END
 
+--Using LTRIM function to remove blanks on the left handside of the given character expression
+
+SELECT *
+FROM EmployeeDemographics
+
+-- Update rows in table 'TableName'
+UPDATE EmployeeDemographics
+SET
+    [Firstname] = '     Tommy'
+  
+WHERE EmployeeID = 1003	/* add search conditions here */
+GO
