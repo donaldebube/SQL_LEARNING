@@ -787,3 +787,27 @@ GO
 -- 3.) Code reusability and better maintainability
 -- 4.) Better Security
 -- 5.) Avoids SQL injection attack
+
+-- Part 22 - String Functions
+--Commonly used built -in string functions in SQL Server
+--Two types of functions are 
+--1.) User defined functions
+--2.) System functions
+
+--System Functions
+
+--Using the ASCII Function
+SELECT ASCII (1) AS Number
+
+--Using the CHAR - CHARACTER FUNCTION
+SELECT CHAR(65) AS ALPHABETS
+
+--Using CHAR Function to create a loop of A - Z
+DECLARE @start INT
+SET @start = 65
+WHILE (@start <= 91)
+BEGIN
+    PRINT CHAR(@Start)
+    SET @start = @start +1
+END
+
