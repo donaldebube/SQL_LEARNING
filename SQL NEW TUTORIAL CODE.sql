@@ -759,9 +759,9 @@ PRINT 'Name of the Employee =' + @Total
 
 
 --Add New Column to table
-ALTER TABLE EmployeeDemographics
-    ADD [Full Name] NVARCHAR (100)
-GO
+-- ALTER TABLE EmployeeDemographics
+--     ADD [Full Name] NVARCHAR (100)
+-- GO
 
 -- Update rows in table 'TableName'
 UPDATE EmployeeDemographics
