@@ -868,3 +868,23 @@ SELECT GETDATE() AS [Current System Date and Time]
 
 SELECT *
 FROM tblDateTime
+
+
+--Part 26 - DateTime Function
+--IsDate, Day, Month, Year and DateName
+--A practical example of using these functions
+
+--ISDATE() FUNCTION - Checks if the given value, is a valid date, time or datetime. It returns 1 for success, 0 for failure
+--NOTE: For datetime2 values, ISDATE() returns ZERO
+
+--DAY() FUNCTION - Returns the 'Day number of the Month' of the given date
+SELECT DAY(GETDATE()) --Returns the current date day number of the month
+SELECT DAY('01/31/2022') --Returns 31
+
+--Month() Function - Returns the 'Month number of the year' of the given date
+SELECT MONTH(GETDATE()) --Returns the current month number of the year
+SELECT MONTH('01/31/2022') -- Returns 01
+
+--Year() Function - Returns the 'Year number' of the given date
+SELECT YEAR(GETDATE()) --Returns the current year
+SELECT YEAR('01/31/2022') --Returns 2022
