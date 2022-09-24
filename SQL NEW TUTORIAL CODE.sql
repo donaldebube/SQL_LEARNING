@@ -858,8 +858,13 @@ VALUES
     GETDATE(), GETDATE(), GETDATE(), GETDATE(), GETDATE(), GETDATE()
 )
 
+--UPDATE only the DATETIME OFFSET (That is the only DateTime statement that can be updated)
+UPDATE tblDateTime 
+SET [C DateTimeOffset] = '2022-09-24 18:29:56.2633333 +10:00'
+WHERE [C DateTimeOffset] = '2022-09-24 18:29:56.2633333 +00:00'
+
 --Side Distraction
 SELECT GETDATE() AS [Current System Date and Time]
 
--- SELECT *
--- FROM tblDateTime
+SELECT *
+FROM tblDateTime
