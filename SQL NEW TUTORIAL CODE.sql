@@ -971,3 +971,56 @@ SELECT @days = DATEDIFF(DAY, @tempdate, GETDATE())
 SELECT @tempdate = DATEADD(DAY, @days, @tempdate)
 
 SELECT @years AS Years, @months AS Months, @days AS [DAYS]
+GO
+
+
+--Converting this into a USER DEFINED FUNCTION
+--Practical Example
+
+SELECT [Employee ID], [First Name] + ' ' + [Last Name] AS [Full Name], [Date of Birth], dbo.fnComputeAge ([Date of Birth]) as Age
+FROM tblPerson
+GO
+
+SELECT dbo.fnComputeAge ('11/30/2005')
+GO
+
+CREATE FUNCTION fnComputeAge (@DOB DATETIME)
+RETURNS NVARCHAR (50)
+AS
+BEGIN
+
+    DECLARE  @tempdate datetime, @years INT, @months INT, @days INT --@DOB datetime
+    --  SET @DOB = '10/20/1998' -- NOTE: It is '10/20/1998' which is Month/Day/Year
+
+    SELECT @tempdate = @DOB
+
+    SELECT @years = DATEDIFF(YEAR, @tempdate, GETDATE()) -
+                    CASE   
+                        WHEN (MONTH(@DOB) > MONTH(GETDATE())) OR 
+                        (MONTH(@DOB) = MONTH(GETDATE()) AND DAY(@DOB) > DAY(GETDATE()))
+                        THEN 1 ELSE 0
+                    END
+
+    SELECT @tempdate = DATEADD(YEAR, @years, @tempdate)
+
+    SELECT @months = DATEDIFF(MONTH, @tempdate, GETDATE()) -
+                    CASE 
+                        WHEN (DAY(@DOB) > DAY(GETDATE()))
+                        THEN 1 ELSE 0
+                    END
+
+    SELECT @tempdate = DATEADD(MONTH, @months, @tempdate)
+
+    SELECT @days = DATEDIFF(DAY, @tempdate, GETDATE())
+
+    SELECT @tempdate = DATEADD(DAY, @days, @tempdate)
+
+    DECLARE @Age NVARCHAR(50)
+    SET @Age =  CONVERT(nvarchar(4), @years) + ' Years ' + CAST(@months AS nvarchar(10)) + ' Months ' + CONVERT(nvarchar(20), @days) + ' Days Old '
+    
+    RETURN @AGE
+END
+GO
+
+--To drop function
+DROP FUNCTION dbo.fnComputeAge
