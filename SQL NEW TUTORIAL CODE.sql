@@ -923,3 +923,22 @@ SET
    
 WHERE [Employee ID] = 6 /* add search conditions here */
 GO
+
+--Part 27 - DateTime Function contd
+--DatePart, DateAdd and DateDiff functions 
+
+--DatePart(DatePart, Date) - Return an integer representing the specified DatePart. This function is similar to DateName().
+--DateName() returns nvarchar, where as DatePart() returns an integer.
+--Example:
+SELECT DATEPART(WEEKDAY, GETDATE())
+SELECT DATENAME(WEEKDAY, GETDATE())
+
+--DATEADD(datepart, NumberToAdd, date) - Returns the DateTime, after adding specified NumberToAdd, to the datepart specified of the given date
+--Example:
+SELECT DATEADD(DAY, 20, GETDATE())
+SELECT DATEADD(DAY, -20, GETDATE())
+
+--DATEDIFF(DATEPART, STARDATE, ENDDATE) - Return the count of the specified datepart boundaries crossed between the specified stardate and enddate
+--Example:
+SELECT DATEDIFF(MONTH, '11/30/2005', '01/31/2006')
+SELECT DATEDIFF(DAY,'11/30/2005', '01/31/2006')
