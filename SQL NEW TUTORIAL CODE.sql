@@ -833,3 +833,33 @@ WHERE EmployeeID = 101	/* add search conditions here */
 GO
 
 --Part 25 - DateTime Functions in SQL
+--DateTime Data Types
+--DateTime Functions
+--Understand UTC time and Time Zone offset
+--UTC means Coordinated Universal Time, based on which, the world regulates clocks and time.
+
+--Create a Date and Time table
+-- Create a new table called 'TableName' in schema 'SchemaName'
+
+CREATE TABLE tblDateTime
+(
+    [C Time] TIME (7),
+    [C Date] DATE,
+    [C Small DateTime] SMALLDATETIME,
+    [C DateTime] DATETIME,
+    [C DateTime2] DATETIME2(7),
+    [C DateTimeOffset] DATETIMEOFFSET
+);
+GO
+--Insert Values into Table
+INSERT INTO tblDateTime 
+VALUES 
+(
+    GETDATE(), GETDATE(), GETDATE(), GETDATE(), GETDATE(), GETDATE()
+)
+
+--Side Distraction
+SELECT GETDATE() AS [Current System Date and Time]
+
+SELECT *
+FROM tblDateTime
