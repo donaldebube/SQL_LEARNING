@@ -944,8 +944,8 @@ SELECT DATEDIFF(MONTH, '11/30/2005', '01/31/2006')
 SELECT DATEDIFF(DAY,'11/30/2005', '01/31/2006')
 
 --Practical Example
-DECLARE @DOB DATETIME, @tempdate DATETIME, @years INT, @months INT, @days INT
-SET @DOB = '20/10/1998'
+DECLARE @DOB datetime, @tempdate datetime, @years INT, @months INT, @days INT
+SET @DOB = '10/20/1998' -- NOTE: It is '10/20/1998' which is Month/Day/Year
 
 SELECT @tempdate = @DOB
 
@@ -970,4 +970,4 @@ SELECT @days = DATEDIFF(DAY, @tempdate, GETDATE())
 
 SELECT @tempdate = DATEADD(DAY, @days, @tempdate)
 
-SELECT @years AS YEAR, @months AS MONTH, @days AS DAY
+SELECT @years AS Years, @months AS Months, @days AS [DAYS]
