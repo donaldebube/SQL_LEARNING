@@ -900,7 +900,7 @@ SELECT DATENAME(MONTH, '01/24/2022') --Returns January
 
 --Example 2:
 SELECT 
-    [First Name], 
+    [First Name] + ' ' + [Last Name] AS [Full Name], 
     [Date of Birth], 
     DATENAME(WEEKDAY, [Date of Birth]) AS [Day of Birth],
     DATENAME(MONTH, [Date of Birth]) AS [Month of Birth],
