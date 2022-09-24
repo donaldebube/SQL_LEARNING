@@ -942,3 +942,32 @@ SELECT DATEADD(DAY, -20, GETDATE())
 --Example:
 SELECT DATEDIFF(MONTH, '11/30/2005', '01/31/2006')
 SELECT DATEDIFF(DAY,'11/30/2005', '01/31/2006')
+
+--Practical Example
+DECLARE @DOB DATETIME, @tempdate DATETIME, @years INT, @months INT, @days INT
+SET @DOB = '20/10/1998'
+
+SELECT @tempdate = @DOB
+
+SELECT @years = DATEDIFF(YEAR, @tempdate, GETDATE()) -
+                CASE   
+                    WHEN (MONTH(@DOB) > MONTH(GETDATE())) OR 
+                    (MONTH(@DOB) = MONTH(GETDATE()) AND DAY(@DOB) > DAY(GETDATE()))
+                    THEN 1 ELSE 0
+                END
+
+SELECT @tempdate = DATEADD(YEAR, @years, @tempdate)
+
+SELECT @months = DATEDIFF(MONTH, @tempdate, GETDATE()) -
+                CASE 
+                    WHEN (DAY(@DOB) > DAY(GETDATE()))
+                    THEN 1 ELSE 0
+                END
+
+SELECT @tempdate = DATEADD(MONTH, @months, @tempdate)
+
+SELECT @days = DATEDIFF(DAY, @tempdate, GETDATE())
+
+SELECT @tempdate = DATEADD(DAY, @days, @tempdate)
+
+SELECT @years AS YEAR, @months AS MONTH, @days AS DAY
