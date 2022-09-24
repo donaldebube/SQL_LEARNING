@@ -888,3 +888,38 @@ SELECT MONTH('01/31/2022') -- Returns 01
 --Year() Function - Returns the 'Year number' of the given date
 SELECT YEAR(GETDATE()) --Returns the current year
 SELECT YEAR('01/31/2022') --Returns 2022
+
+--DateName(DatePart, Date) - Returns a string that represents a part of the given date
+--This function takes two parameters. The first parameter DatePart specifies, the part of the date, we want.
+--The second parameter is the actual date from which we want the part of the date
+
+--Example 1:
+SELECT DATENAME(DAY, GETDATE()) -- Returns 24
+SELECT DATENAME(WEEKDAY, '01/13/2022') --Returns Thusrday
+SELECT DATENAME(MONTH, '01/24/2022') --Returns January
+
+--Example 2:
+SELECT 
+    [First Name], 
+    [Date of Birth], 
+    DATENAME(WEEKDAY, [Date of Birth]) AS [Day of Birth],
+    DATENAME(MONTH, [Date of Birth]) AS [Month of Birth],
+    YEAR([Date of Birth]) AS Year
+FROM tblPerson
+
+
+--Side Distraction
+SELECT *--[Employee ID], [Date of Birth]
+FROM tblPerson
+
+ALTER TABLE tblPerson
+    ADD [Date of Birth] DATETIME
+GO
+
+-- Update rows in table 'TableName'
+UPDATE tblPerson
+SET
+    [Date of Birth] = '02/08/1992'
+   
+WHERE [Employee ID] = 6 /* add search conditions here */
+GO
