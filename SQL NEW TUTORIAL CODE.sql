@@ -861,5 +861,5 @@ VALUES
 --Side Distraction
 SELECT GETDATE() AS [Current System Date and Time]
 
-SELECT *
-FROM tblDateTime
+-- SELECT *
+-- FROM tblDateTime
