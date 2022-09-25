@@ -1046,3 +1046,14 @@ GO
 -- 103 : dd/mm/yyyy
 -- 104 : dd.mm.yy
 -- 105 : dd-mm-yy
+
+--NOTE: To control the formatting of the Data part, DateTime has to be converted to NVARCHAR using the styles provided.
+
+--To get just the date part, DateTime:
+SELECT CONVERT(varchar(10), GETDATE(), 101) AS Date
+
+--In SQL serevr, Date datatype is introduced, so you can also use:
+--For CAST Function
+SELECT CAST(GETDATE() AS date) AS Date
+--For CONVERT Function
+SELECT CONVERT(DATE, GETDATE()) AS Date
