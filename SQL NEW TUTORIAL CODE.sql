@@ -1057,3 +1057,6 @@ SELECT CONVERT(varchar(10), GETDATE(), 101) AS Date
 SELECT CAST(GETDATE() AS date) AS Date
 --For CONVERT Function
 SELECT CONVERT(DATE, GETDATE()) AS Date
+
+--Example: A query that will give total registration per day
+
