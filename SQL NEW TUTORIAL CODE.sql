@@ -1059,8 +1059,9 @@ SELECT CAST(GETDATE() AS date) AS Date
 SELECT CONVERT(DATE, GETDATE()) AS Date
 
 --Example: A query that will give total registration per day
-SELECT Name, Email, CAST([Registration Date] AS date), COUNT(ID)
+SELECT  CAST([Registration Date] AS date) AS [Registration Date], COUNT(ID) AS [Registration Count]
 FROM tblUKCustomers
+GROUP BY CAST([Registration Date] AS date)
 
 
 --Add Registration Date
