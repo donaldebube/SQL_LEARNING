@@ -1024,3 +1024,25 @@ GO
 
 --To drop function
 DROP FUNCTION dbo.fnComputeAge
+GO
+
+
+--Part 28 - CAST and CONVERT Function
+--To convert one data type to another, CAST and CONVERT functions can be used
+
+--Example 1:
+--For CAST function
+ SELECT [Employee ID], [First Name], City, CAST([Date of Birth] AS nvarchar) AS DOB 
+ FROM tblPerson
+
+ --For CONVERT function
+ --The CONVERT function has another parameter called the "Style"
+ SELECT [Employee ID], [First Name], City, Convert(nvarchar(50),[Date of Birth],105) AS DOB 
+ FROM tblPerson
+
+--Style Options for CONVERT function
+-- 101 : mm/dd/yyyy
+-- 102 : yy.mm.dd
+-- 103 : dd/mm/yyyy
+-- 104 : dd.mm.yy
+-- 105 : dd-mm-yy
