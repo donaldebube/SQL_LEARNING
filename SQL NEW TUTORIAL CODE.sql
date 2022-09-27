@@ -984,6 +984,7 @@ GO
 SELECT dbo.fnComputeAge ('11/30/2005')
 GO
 
+--Creating a User Defined Function (UDF)
 CREATE FUNCTION fnComputeAge (@DOB DATETIME)
 RETURNS NVARCHAR (50)
 AS
@@ -1093,3 +1094,24 @@ FROM tblUKCustomers
 
 --Scaler Functions may or may not have parameters, but always return a single(scaler) value. The returned value can be 
 --of any data type, except text, ntext, image, cursor and timestamp
+
+--Example of Scaler Function
+--Creating a User Defined Function (UDF)
+
+
+DECLARE @DOB DATE
+DECLARE @AGE INT
+SET @DOB = '10/20/1998'
+
+SET @AGE = DATEDIFF(YEAR, @DOB, GETDATE()) -
+            CASE
+                WHEN
+                    (MONTH(@DOB) > MONTH(GETDATE())) OR 
+                    (MONTH(@DOB) = MONTH(GETDATE())) AND 
+                    (DAY(@DOB) > DAY(GETDATE()))
+                THEN 1
+                ELSE 0
+            END
+
+SELECT @AGE
+
