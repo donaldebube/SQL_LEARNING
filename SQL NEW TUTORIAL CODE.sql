@@ -1134,3 +1134,6 @@ FROM tblPerson
 SELECT [Employee ID], [First Name], [Date of Birth], Age, dbo.CalculateAge([Date of Birth]) AS [Calc Age]
 FROM tblPerson
 WHERE dbo.CalculateAge([Date of Birth]) > 25
+
+--NOTE: If you want to get the SYNTAX for a procudure or function, just type
+sp_helptext CalculateAge
