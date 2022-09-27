@@ -1126,11 +1126,11 @@ GO
 --Example 2: 
 --Getting an Age column using a User Defined Function (UDF)
 --Using UDF in the SELECT CLAUSE
-SELECT [Employee ID], [First Name], dbo.CalculateAge([Date of Birth]) AS Age
+SELECT [Employee ID], [First Name],dbo.CalculateAge([Date of Birth]) AS Age
 FROM tblPerson
 
 --Example 3:
 --Using UDF in the WHERE CLAUSE
-SELECT [Employee ID], [First Name], Age
+SELECT [Employee ID], [First Name], [Date of Birth], Age, dbo.CalculateAge([Date of Birth]) AS [Calc Age]
 FROM tblPerson
 WHERE dbo.CalculateAge([Date of Birth]) > 25
