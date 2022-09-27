@@ -1122,3 +1122,8 @@ GO
 --Invoke Age Function
 SELECT dbo.CalculateAge('10/20/1998') AS AGE
 GO
+
+--Example 2: 
+--Getting an Age column using a User Defined Function (UDF)
+SELECT [Employee ID], [First Name], dbo.CalculateAge([Date of Birth]) AS Age
+FROM tblPerson
