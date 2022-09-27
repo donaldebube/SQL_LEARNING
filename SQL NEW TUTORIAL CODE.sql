@@ -1081,7 +1081,7 @@ GO
 
 SELECT *
 FROM tblUKCustomers
-
+GO
 
 
 --SKIP Part 29 - Mathematical Functions
@@ -1097,21 +1097,28 @@ FROM tblUKCustomers
 
 --Example of Scaler Function
 --Creating a User Defined Function (UDF)
+--Create Age Function
+CREATE FUNCTION CalculateAge (@DOB DATE)
+RETURNS INT
+AS
+BEGIN
+    --DECLARE @DOB DATE -- DELETE THIS... NOT REQUIRED
+    DECLARE @AGE INT
+    --SET @DOB = '10/20/1998' --DELETE THIS... NOT REQUIRED
 
+    SET @AGE = DATEDIFF(YEAR, @DOB, GETDATE()) -
+                CASE
+                    WHEN
+                        (MONTH(@DOB) > MONTH(GETDATE())) OR 
+                        (MONTH(@DOB) = MONTH(GETDATE())) AND 
+                        (DAY(@DOB) > DAY(GETDATE()))
+                    THEN 1
+                    ELSE 0
+                END
 
-DECLARE @DOB DATE
-DECLARE @AGE INT
-SET @DOB = '10/20/1998'
-
-SET @AGE = DATEDIFF(YEAR, @DOB, GETDATE()) -
-            CASE
-                WHEN
-                    (MONTH(@DOB) > MONTH(GETDATE())) OR 
-                    (MONTH(@DOB) = MONTH(GETDATE())) AND 
-                    (DAY(@DOB) > DAY(GETDATE()))
-                THEN 1
-                ELSE 0
-            END
-
-SELECT @AGE
-
+    RETURN @AGE --Change 'SELECT' to 'RETURN'
+END
+GO
+--Invoke Age Function
+SELECT dbo.CalculateAge('10/20/1998') AS AGE
+GO
