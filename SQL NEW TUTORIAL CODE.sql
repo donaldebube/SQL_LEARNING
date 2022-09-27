@@ -1080,3 +1080,16 @@ GO
 
 SELECT *
 FROM tblUKCustomers
+
+
+
+--SKIP Part 29 - Mathematical Functions
+
+--Part 30 - User Defined Functions (UDF)
+--Types of UDF
+--1.)Scaler Functions
+--2.)Inline table-valued functions
+--3.)Multi-statement table-valued functions
+
+--Scaler Functions may or may not have parameters, but always return a single(scaler) value. The returned value can be 
+--of any data type, except text, ntext, image, cursor and timestamp
