@@ -1147,6 +1147,9 @@ sp_helptext CalculateAge
 -- 1.) Inline Table Vauled functions can be used to achieve the functionality of parametized views.
 -- 2.) The table returned by the table valued function can also be used in joins with other tables.
 
+-- NOTE: YOU CAN UPDATE THE INFORMATION IN A TABLE WITH INLINE TABLE VALUED FUNCTIONS
+-- IT IS BETTER TO USE INLINE TABLE VALUED FUNCTIONS OVER MULTI-STATEMENT VALUED FUNCTION
+
 SELECT *
 FROM tblPerson
 
@@ -1183,6 +1186,8 @@ GO
 SELECT *
 FROM fn_PersonByGender('Male')
 GO
+
+--
 
 
 -- Part 32 - Multi- Statement Table Valued Functions
