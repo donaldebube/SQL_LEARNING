@@ -1182,6 +1182,7 @@ GO
 -- CALLING THE FUNCTION 'fn_PersonByGender'
 SELECT *
 FROM fn_PersonByGender('Male')
+GO
 
 
 -- Part 32 - Multi- Statement Table Valued Functions
@@ -1189,7 +1190,7 @@ FROM fn_PersonByGender('Male')
 -- Multi Statement Table Valued Function, you specify the structure of a table.
 
 -- Example
-CREATE FUNCTION fn_mstvf_GetEmployees
+CREATE FUNCTION fn_mstvf_GetEmployees()
 RETURNS @Table TABLE ([Employee ID] INT, [First Name] nvarchar(50), [Date of Birth] DATE)
 AS
     BEGIN
