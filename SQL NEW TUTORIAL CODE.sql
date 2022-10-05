@@ -1161,3 +1161,13 @@ WHERE [Employee ID] = 6	/* add search conditions here */
 GO
 
 --Example 1
+CREATE FUNCTION fn_PersonByGender (@Gender nvarchar(20))
+RETURNS TABLE
+AS
+RETURN 
+    (
+        SELECT [Employee ID], GenderID, Age, City, [Date of Birth], [First Name]
+        FROM tblPerson
+        WHERE @Gender = Gender
+    )
+GO
