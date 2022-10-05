@@ -1184,10 +1184,31 @@ GO
 
 -- CALLING THE FUNCTION 'fn_PersonByGender'
 SELECT *
-FROM fn_PersonByGender('Male')
+FROM fn_PersonByGender()
 GO
 
---
+-- Creating another inline table valued function
+CREATE FUNCTION fn_ILTVF_PersonByGender()
+RETURNS TABLE
+AS
+RETURN 
+    (
+        SELECT [Employee ID], GenderID, Age, City, [Date of Birth], [First Name], Gender
+        FROM tblPerson
+    )
+GO
+
+-- CALLING THE 'fn_ILTVF_PersonByGender()' FUNCTION
+SELECT *
+FROM fn_ILTVF_PersonByGender()
+
+-- How to update info using inline table valued functions
+UPDATE fn_ILTVF_PersonByGender()
+SET
+    City = 'Imo'
+WHERE [Employee ID] = 1
+GO
+
 
 
 -- Part 32 - Multi- Statement Table Valued Functions
