@@ -1166,8 +1166,14 @@ RETURNS TABLE
 AS
 RETURN 
     (
-        SELECT [Employee ID], GenderID, Age, City, [Date of Birth], [First Name]
+        SELECT [Employee ID], GenderID, Age, City, [Date of Birth], [First Name], Gender
         FROM tblPerson
         WHERE @Gender = Gender
     )
 GO
+
+DROP FUNCTION fn_PersonByGender
+
+-- CALLING THE FUNCTION 'fn_PersonByGender'
+SELECT *
+FROM fn_PersonByGender('Male')
