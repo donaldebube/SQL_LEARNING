@@ -1143,6 +1143,10 @@ sp_helptext CalculateAge
 -- A scaler function returns a scaler value
 -- An Inline Table Value returns a table
 
+-- When can we use Inline Table Valued Functions:
+-- 1.) Inline Table Vauled functions can be used to achieve the functionality of parametized views.
+-- 2.) The table returned by the table valued function can also be used in joins with other tables.
+
 SELECT *
 FROM tblPerson
 
@@ -1160,6 +1164,9 @@ SET
 WHERE [Employee ID] = 6	/* add search conditions here */
 GO
 
+-- Syntax to drop function
+DROP FUNCTION fn_PersonByGender
+GO
 --Example 1
 CREATE FUNCTION fn_PersonByGender (@Gender nvarchar(20))
 RETURNS TABLE
@@ -1171,8 +1178,6 @@ RETURN
         WHERE @Gender = Gender
     )
 GO
-
-DROP FUNCTION fn_PersonByGender
 
 -- CALLING THE FUNCTION 'fn_PersonByGender'
 SELECT *
