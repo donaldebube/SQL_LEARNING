@@ -1182,3 +1182,20 @@ GO
 -- CALLING THE FUNCTION 'fn_PersonByGender'
 SELECT *
 FROM fn_PersonByGender('Male')
+
+
+-- Part 32 - Multi- Statement Table Valued Functions
+-- NOTE: In Inline Table Valued Function, you dont dpecify the structure of a table.
+-- Multi Statement Table Valued Function, you specify the structure of a table.
+
+-- Example
+CREATE FUNCTION fn_mstvf_GetEmployees
+RETURNS @Table TABLE ([Employee ID] INT, [First Name] nvarchar(50), [Date of Birth] DATE)
+AS
+    BEGIN
+        INSERT INTO @Table
+            SELECT [Employee ID], [First Name], CONVERT(DATE, [Date Of Birth])
+            FROM tblPerson
+        RETURN
+    END
+GO
