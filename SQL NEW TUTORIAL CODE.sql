@@ -1137,3 +1137,26 @@ WHERE dbo.CalculateAge([Date of Birth]) > 25
 
 --NOTE: If you want to get the SYNTAX for a procudure or function, just type
 sp_helptext CalculateAge
+
+
+-- Part 31 - Inline Table Valued Functions
+-- A scaler function returns a scaler value
+-- An Inline Table Value returns a table
+
+--Example 1
+SELECT *
+FROM tblPerson
+
+--Add a new column to tblperson table
+ALTER TABLE tblperson
+    ADD Gender NVARCHAR(50)
+GO
+
+-- Update rows in table 'tblperson'
+UPDATE tblPerson
+SET
+    [Gender] = 'Male'
+    
+    -- add more columns and values here
+WHERE [Employee ID] = 	/* add search conditions here */
+GO
