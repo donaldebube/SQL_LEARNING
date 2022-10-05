@@ -1143,7 +1143,6 @@ sp_helptext CalculateAge
 -- A scaler function returns a scaler value
 -- An Inline Table Value returns a table
 
---Example 1
 SELECT *
 FROM tblPerson
 
@@ -1155,8 +1154,10 @@ GO
 -- Update rows in table 'tblperson'
 UPDATE tblPerson
 SET
-    [Gender] = 'Male'
+    [Gender] = 'Female'
     
     -- add more columns and values here
-WHERE [Employee ID] = 	/* add search conditions here */
+WHERE [Employee ID] = 6	/* add search conditions here */
 GO
+
+--Example 1
