@@ -1191,12 +1191,16 @@ GO
 
 -- Example
 CREATE FUNCTION fn_mstvf_GetEmployees()
-RETURNS @Table TABLE ([Employee ID] INT, [First Name] nvarchar(50), [Date of Birth] DATE)
+RETURNS @Table TABLE ([Employee ID] INT, [First Name] nvarchar(50), [Date of Birth] DATE, Gender nvarchar(50))
 AS
     BEGIN
         INSERT INTO @Table
-            SELECT [Employee ID], [First Name], CONVERT(DATE, [Date Of Birth])
+            SELECT [Employee ID], [First Name], CONVERT(DATE, [Date Of Birth]), Gender
             FROM tblPerson
         RETURN
     END
 GO
+
+-- CALLING THE FUNCTION 'fn_mstvf_GetEmployees()'
+SELECT *
+FROM fn_mstvf_GetEmployees()
