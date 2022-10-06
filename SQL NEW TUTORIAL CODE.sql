@@ -1328,8 +1328,11 @@ DROP TABLE tblPerson
 -- 1.) Local Temp Tables
 -- 2.) Global Temp Tables
 
--- HOW TO CREATE A TEMP TABLE
+-- HOW TO CREATE A LOCAL TEMP TABLE
 -- To create a temp table, all you need to do in input a # (hash) symbol in front of the temp table name
+
+-- HOW TO CREATE A GLOBAL TEMP TABLE
+-- To create a temp table, all you need to do in input TWO # (hash) symbol in front of the temp table name e.g. ##PrinterName
 
 -- Example 1:
 --Create Temp Table
