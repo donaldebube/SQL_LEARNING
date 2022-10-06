@@ -1340,7 +1340,8 @@ DROP TABLE tblPerson
 -- 1.) LOCAL TEMP TABLES are prefixed with the single pound (#) symbol, where as the global temp tables are prefixed with 2 pound (##) symbols
 -- 2.) SQL Server appends some random numbers at the end of the local temp table name, where this is not done for the global table name.
 -- 3.) Local Temp Tables are only visible to that session of the SQL Server which has created it, where as Global Temp Tables are visible to all the SQL server sessions
--- 4.) 
+-- 4.) Local Temp Tables are automatically dropped, when the session that created the temp tables is closed, where as GLOBAL TEMP TABLES ARE DESTROYED WHEN THE LAST CONNECTION THAT IS REFERENCING THE GLOBAL TEMP IS CLOSED.
+
 -- Example 1:
 --Create Temp Table
 CREATE TABLE #PersonDetails ([Employee ID] INT, Name NVARCHAR(50))
