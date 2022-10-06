@@ -1330,9 +1330,11 @@ DROP TABLE tblPerson
 
 -- HOW TO CREATE A LOCAL TEMP TABLE
 -- To create a temp table, all you need to do in input a # (hash) symbol in front of the temp table name
+-- LOCAL TEMP TABLE IS AVAILABLE ONLY FOR THE CONNECTION THAT HAS CREATED THE TABLE
 
 -- HOW TO CREATE A GLOBAL TEMP TABLE
 -- To create a temp table, all you need to do in input TWO # (hash) symbol in front of the temp table name e.g. ##PrinterName
+-- GLOBAL TEMP TABLE ARE VISIBLE TO ALL THE NEW QUERY CONNECTIONS OF THE SQL SERVER AND ARE ONLY DESTROYED WHEN THE LAST CONNECTION REFERENCING THE TABLE IS CLOSED.
 
 -- Example 1:
 --Create Temp Table
