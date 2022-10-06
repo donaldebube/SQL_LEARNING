@@ -1268,11 +1268,11 @@ WITH ENCRYPTION
 AS
 BEGIN
     RETURN
-        (
-            SELECT [First Name]
-            FROM tblPerson
-            WHERE [Employee ID] = @ID
-        )
+    (
+        SELECT [First Name]
+        FROM tblPerson
+        WHERE [Employee ID] = @ID
+    )
 END
 GO
 
