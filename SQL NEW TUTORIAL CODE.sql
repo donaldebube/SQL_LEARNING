@@ -1232,6 +1232,7 @@ SELECT *
 FROM fn_mstvf_GetEmployees()
 
 -- Part 33 - Functions (Important Concepts)
+
 -- Deterministic Functions always return the same result anytime they are called with a specific set of input values and given the same state of the database.
 -- Examples are: Square(), Power(), Sum(), AVG() and Count()
 -- Basically, all aggregate functions are Deterministic Functions
@@ -1240,3 +1241,27 @@ FROM fn_mstvf_GetEmployees()
 -- Examples are: GetDate() and CURRENT_TIMESTAMP
 
 --Rand() Function is a NON-DETERMINISTIC FUNCTION, but if you provide the seed value, the function becomes deterministic, as the same value gets returned for the same seed value 
+
+SELECT*
+FROM tblPerson
+GO
+
+--Example: Using a scaler function, create a simple function to provide the name of an employee with the ID
+CREATE FUNCTION fn_GetNameWithEmployeeID(@ID INT)
+RETURNS NVARCHAR(100)
+AS
+BEGIN
+    RETURN
+        (
+            SELECT [First Name]
+            FROM tblPerson
+                WHERE [Employee ID] = @ID
+        )
+END
+GO
+
+-- EXECUTE FUNCTION
+SELECT dbo.fn_GetNameWithEmployeeID (1)
+
+-- To get the definition of a function, do the following
+sp_helptext fn_GetNameWithEmployeeID
