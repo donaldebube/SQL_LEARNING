@@ -1330,3 +1330,30 @@ DROP TABLE tblPerson
 
 -- HOW TO CREATE A TEMP TABLE
 -- To create a temp table, all you need to do in input a # (hash) symbol in front of the temp table name
+
+-- Example 1:
+--Create Temp Table
+CREATE TABLE #PersonDetails ([Employee ID] INT, Name NVARCHAR(50))
+
+-- Insert info into temp table
+-- Insert rows into table '#PersonDetails'
+INSERT INTO #PersonDetails
+( -- columns to insert data into
+ [Employee ID], [Name]
+)
+VALUES
+( -- first row: values for the columns in the list above
+    1, 'Mike'
+),
+( -- second row: values for the columns in the list above
+    2, 'Donald'
+),
+(-- third row: values for the columns in the list above
+    3, 'Amanda'
+)
+GO
+
+-- CALLING A TEMP TABLE
+SELECT *
+FROM #PersonDetails
+
