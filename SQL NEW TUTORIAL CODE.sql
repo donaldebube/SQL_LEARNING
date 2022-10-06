@@ -1255,13 +1255,32 @@ BEGIN
         (
             SELECT [First Name]
             FROM tblPerson
-                WHERE [Employee ID] = @ID
+            WHERE [Employee ID] = @ID
         )
 END
 GO
+
+-- IF YOU WANT TO ALTER A FUNCTION, SIMPLY EXCHANGE CREATE WITH ALTER
+--  TO ENCRYPT A FUNCTION
+ALTER FUNCTION fn_GetNameWithEmployeeID(@ID INT)
+RETURNS NVARCHAR(100)
+WITH ENCRYPTION
+AS
+BEGIN
+    RETURN
+        (
+            SELECT [First Name]
+            FROM tblPerson
+            WHERE [Employee ID] = @ID
+        )
+END
+GO
+
 
 -- EXECUTE FUNCTION
 SELECT dbo.fn_GetNameWithEmployeeID (1)
 
 -- To get the definition of a function, do the following
 sp_helptext fn_GetNameWithEmployeeID
+
+
