@@ -1291,10 +1291,30 @@ RETURNS NVARCHAR(100)
 AS
 BEGIN
     RETURN
-        (
-            SELECT [First Name]
-            FROM tblPerson
-            WHERE [Employee ID] = @ID
-        )
+    (
+        SELECT [First Name]
+        FROM tblPerson
+        WHERE [Employee ID] = @ID
+    )
 END
 GO
+
+-- SCHEMABINDING OPTION makes it impossible for a table that is being used by a function to get deleted.
+
+--Example:
+ALTER FUNCTION fn_GetNameWithEmployeeID(@ID INT)
+RETURNS NVARCHAR(50)
+WITH SCHEMABINDING
+AS
+    BEGIN
+        RETURN
+        (
+            SELECT [First Name]
+            FROM dbo.tblPerson
+            WHERE [Employee ID] = @ID
+        )
+    END
+GO
+
+-- TESTING THE SCHEMABINDING OPTION AND IT WORKS!
+DROP TABLE tblPerson
