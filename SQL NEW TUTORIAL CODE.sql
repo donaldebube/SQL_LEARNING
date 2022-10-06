@@ -1338,7 +1338,8 @@ DROP TABLE tblPerson
 
 -- DIFFERENCES BETWEEN LOCAL AND GLOBAL TEMP TABLES
 -- 1.) LOCAL TEMP TABLES are prefixed with the single pound (#) symbol, where as the global temp tables are prefixed with 2 pound (##) symbols
--- 2.) 
+-- 2.) SQL Server appends some random numbers at the end of the local temp table name, where this is not done for the global table name.
+-- 3.)
 -- Example 1:
 --Create Temp Table
 CREATE TABLE #PersonDetails ([Employee ID] INT, Name NVARCHAR(50))
