@@ -1282,5 +1282,19 @@ SELECT dbo.fn_GetNameWithEmployeeID (1)
 
 -- To get the definition of a function, do the following
 sp_helptext fn_GetNameWithEmployeeID
+GO
 
-
+-- Creating a function WITH SCHEMABINDING OPTION
+ALTER FUNCTION fn_GetNameWithEmployeeID(@ID INT)
+RETURNS NVARCHAR(100)
+-- WITH ENCRYPTION -- Remove encrytion 
+AS
+BEGIN
+    RETURN
+        (
+            SELECT [First Name]
+            FROM tblPerson
+            WHERE [Employee ID] = @ID
+        )
+END
+GO
