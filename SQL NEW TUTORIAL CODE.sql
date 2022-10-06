@@ -1336,6 +1336,9 @@ DROP TABLE tblPerson
 -- To create a temp table, all you need to do in input TWO # (hash) symbol in front of the temp table name e.g. ##PrinterName
 -- GLOBAL TEMP TABLE ARE VISIBLE TO ALL THE NEW QUERY CONNECTIONS OF THE SQL SERVER AND ARE ONLY DESTROYED WHEN THE LAST CONNECTION REFERENCING THE TABLE IS CLOSED.
 
+-- DIFFERENCES BETWEEN LOCAL AND GLOBAL TEMP TABLES
+-- 1.) LOCAL TEMP TABLES are prefixed with the single pound (#) symbol, where as the global temp tables are prefixed with 2 pound (##) symbols
+-- 2.) 
 -- Example 1:
 --Create Temp Table
 CREATE TABLE #PersonDetails ([Employee ID] INT, Name NVARCHAR(50))
@@ -1361,4 +1364,6 @@ GO
 -- CALLING A TEMP TABLE
 SELECT *
 FROM #PersonDetails
+
+
 
