@@ -1230,3 +1230,13 @@ GO
 -- CALLING THE FUNCTION 'fn_mstvf_GetEmployees()'
 SELECT *
 FROM fn_mstvf_GetEmployees()
+
+-- Part 33 - Functions (Important Concepts)
+-- Deterministic Functions always return the same result anytime they are called with a specific set of input values and given the same state of the database.
+-- Examples are: Square(), Power(), Sum(), AVG() and Count()
+-- Basically, all aggregate functions are Deterministic Functions
+
+-- Non-deterministic Functions may return different results each time they are called with a specific set of input values even if the database state that their access remains the same.
+-- Examples are: GetDate() and CURRENT_TIMESTAMP
+
+--Rand() Function is a NON-DETERMINISTIC FUNCTION, but if you provide the seed value, the function becomes deterministic, as the same value gets returned for the same seed value 
