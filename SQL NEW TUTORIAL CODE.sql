@@ -1318,3 +1318,15 @@ GO
 
 -- TESTING THE SCHEMABINDING OPTION AND IT WORKS!
 DROP TABLE tblPerson
+
+
+
+-- Part 34 - Temp Tables
+
+-- Temp Tables get created in the TempDB and are automaticaly deleted when they are no longer used.
+-- Types of Temporary Tables
+-- 1.) Local Temp Tables
+-- 2.) Global Temp Tables
+
+-- HOW TO CREATE A TEMP TABLE
+-- To create a temp table, all you need to do in input a # (hash) symbol in front of the temp table name
