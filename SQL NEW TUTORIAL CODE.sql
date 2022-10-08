@@ -1423,6 +1423,14 @@ CREATE INDEX IX_tblEmployees1_Salary
 ON tblEmployees1 (Salary ASC)
 GO
 
+CREATE  INDEX IX_tblEmployees1_Salary1
+ON tblEmployees1 (Salary ASC, GENDER ASC)
+
+
+-- DROP an Index
+DROP INDEX tblEmployees1.IX_tblEmployees1_Salary
+GO
+
 sp_helpindex tblEmployees1
 GO
 
