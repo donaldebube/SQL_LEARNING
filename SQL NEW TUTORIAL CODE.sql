@@ -1382,7 +1382,6 @@ sp_helpindex EmployeeSalary
 -- How to drop an index
 DROP INDEX IX_EmployeeSalary_Salary
 
-SELECT *
-FROM EmployeeSalary
+
 
 
