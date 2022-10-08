@@ -1381,12 +1381,49 @@ sp_helpindex EmployeeSalary
 
 -- How to drop an index
 DROP INDEX IX_EmployeeSalary_Salary
-
+GO
 
 
 -- Part 36 - Clustered & Non- Clustered Indexes
 
 -- Clustered Index determines the physical order of the data in a table. For this reason, a table can have only one clustered index.
 
+-- Create new table for index purpose
+CREATE TABLE tblEmployees1
+    (
+        ID int PRIMARY KEY,
+        NAME NVARCHAR(50),
+        SALARY INT,
+        GENDER NVARCHAR(50),
+        CITY NVARCHAR(50)
+    )
+GO
+
+INSERT INTO tblEmployees1
+VALUES
+(-- First row
+    1, 'Becky', 45000, 'Female', 'Delta'
+),
+(-- Second row
+    2, 'Kiki', 60000, 'Male', 'Edo'
+),
+(-- Third row
+    3, 'Donald', 50000, 'Male', 'Lagos'
+),
+(-- Forth row
+    4, 'Amanda', 70000, 'Female', 'Lagos'
+),
+(
+    5, 'Michael', 40000, 'Male', 'Delta'
+)
+GO
+
+-- Create an Index
+
+sp_helpindex EmployeeDemographics
+GO
+
+SELECT *
+FROM tblEmployees1
 
 
