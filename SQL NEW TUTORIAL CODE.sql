@@ -1445,4 +1445,8 @@ SELECT *
 FROM tblEmployees1
 
 
+-- NON-CLUSTERED INDEX
+-- A table can have more than one non-clustered index
+-- A nonclustered index is analogous to an index in a textbook. The data is stored in one place, the index in another place.
+
 
