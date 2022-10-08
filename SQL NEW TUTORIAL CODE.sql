@@ -1422,7 +1422,9 @@ GO
 CREATE INDEX IX_tblEmployees1_Salary
 ON tblEmployees1 (Salary ASC)
 GO
-
+-- Creating a composite cluster index
+-- NOTE: You can only have one cluster index on a table.
+-- A composite cluster index has two or more action values e.g (ON tblEmployees1 (Salary ASC, GENDER DESC))
 CREATE CLUSTERED INDEX IX_tblEmployees1_Salary1_Gender
 ON tblEmployees1 (Salary ASC, GENDER DESC)
 GO
