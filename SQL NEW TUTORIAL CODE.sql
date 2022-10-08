@@ -1419,8 +1419,11 @@ VALUES
 GO
 
 -- Create an Index
+CREATE INDEX IX_tblEmployees1_Salary
+ON tblEmployees1 (Salary ASC)
+GO
 
-sp_helpindex EmployeeDemographics
+sp_helpindex tblEmployees1
 GO
 
 SELECT *
