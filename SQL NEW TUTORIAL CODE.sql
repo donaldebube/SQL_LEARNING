@@ -1426,12 +1426,12 @@ GO
 -- NOTE: You can only have one cluster index on a table.
 -- A composite cluster index has two or more columns as index keys e.g (ON tblEmployees1 (Salary ASC, GENDER DESC))
 CREATE CLUSTERED INDEX IX_tblEmployees1_Salary1_Gender
-ON tblEmployees1 (Salary ASC, GENDER DESC)
+ON tblEmployees1 (Salary DESC, GENDER ASC)
 GO
 
 
 -- DROP an Index
-DROP INDEX tblEmployees1.
+DROP INDEX tblEmployees1.IX_tblEmployees1_Salary1_Gender
 GO
 
 -- Query to drop a special Clustered index created by SQL
@@ -1443,5 +1443,6 @@ GO
 
 SELECT *
 FROM tblEmployees1
+
 
 
