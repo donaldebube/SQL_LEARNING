@@ -1369,4 +1369,15 @@ SELECT *
 FROM #PersonDetails
 
 
+-- Part 35 -Indexes
+
+-- How to Create an Index
+CREATE INDEX IX_EmployeeSalary_Salary
+ON EmployeeSalary (Salary ASC)
+
+GO
+
+SELECT *
+FROM EmployeeSalary
+
 
