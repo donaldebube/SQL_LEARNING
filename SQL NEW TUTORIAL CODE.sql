@@ -1374,8 +1374,13 @@ FROM #PersonDetails
 -- How to Create an Index
 CREATE INDEX IX_EmployeeSalary_Salary
 ON EmployeeSalary (Salary ASC)
-
 GO
+
+-- How to get the definition of an INDEX
+sp_helpindex EmployeeSalary
+
+-- How to drop an index
+DROP INDEX IX_EmployeeSalary_Salary
 
 SELECT *
 FROM EmployeeSalary
