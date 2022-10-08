@@ -1423,12 +1423,17 @@ CREATE INDEX IX_tblEmployees1_Salary
 ON tblEmployees1 (Salary ASC)
 GO
 
-CREATE  INDEX IX_tblEmployees1_Salary1
-ON tblEmployees1 (Salary ASC, GENDER ASC)
+CREATE CLUSTERED INDEX IX_tblEmployees1_Salary1_Gender
+ON tblEmployees1 (Salary ASC, GENDER DESC)
+GO
 
 
 -- DROP an Index
-DROP INDEX tblEmployees1.IX_tblEmployees1_Salary
+DROP INDEX tblEmployees1.
+GO
+
+-- Query to drop a special Clustered index created by SQL
+ALTER TABLE [dbo].[tblEmployees1] DROP CONSTRAINT [PK__tblEmplo__3214EC2750ABD784] WITH ( ONLINE = OFF )
 GO
 
 sp_helpindex tblEmployees1
