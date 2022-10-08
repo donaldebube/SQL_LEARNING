@@ -1449,4 +1449,8 @@ FROM tblEmployees1
 -- A table can have more than one non-clustered index
 -- A nonclustered index is analogous to an index in a textbook. The data is stored in one place, the index in another place.
 
+-- Differences bewteen a Clustered Index and a NON-Clustered Index
+-- 1.) Only one clustered index per table, where as you can have more than one non clustered index.
+-- 2.) Clustered index is faster than a non clustered index, because , the clustered index has to refer back to the table, if the selected column is ot present in the index
+-- 3.) Clusterd index determines the storage order of rows in the table and hence doesn't require additional disk space, but where as a Non Clustered index is stored seperately from the table. Additional torage is required.
 
