@@ -1384,4 +1384,9 @@ DROP INDEX IX_EmployeeSalary_Salary
 
 
 
+-- Part 36 - Clustered & Non- Clustered Indexes
+
+-- Clustered Index determines the physical order of the data in a table. For this reason, a table can have only one clustered index.
+
+
 
