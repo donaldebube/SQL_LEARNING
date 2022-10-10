@@ -1454,3 +1454,9 @@ FROM tblEmployees1
 -- 2.) Clustered index is faster than a non clustered index, because , the clustered index has to refer back to the table, if the selected column is ot present in the index
 -- 3.) Clusterd index determines the storage order of rows in the table and hence doesn't require additional disk space, but where as a Non Clustered index is stored seperately from the table. Additional torage is required.
 
+
+
+-- Part 37 - Unique & Non-Unique Indexes
+
+-- Unique Index is used to enforce uniqueness of key values in the index.
+-- By default, a PRIMARY KEY constraint creates a unique clustered index.
