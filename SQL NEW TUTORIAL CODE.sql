@@ -1557,7 +1557,6 @@ FROM VWEmployeesByDepartment
 
 
 
-
 -- Part 40 - Updateable Views
 -- A view ia stored select statement
 -- When you update a view, it will also update the underline base table from which it is getting its data
@@ -1567,3 +1566,13 @@ UPDATE VWEmployeesByDepartment
 SET 
     NAME = 'Rebecca'
 WHERE NAME = 'Becky'
+
+-- Verify if it changed in the view
+SELECT *
+FROM VWEmployeesByDepartment
+
+-- Verify if it changed in the ACTUAL TABLE
+SELECT *
+FROM tblEmployees1
+
+-- IT CHANGED!
