@@ -1542,3 +1542,11 @@ FROM tblEmployees1 AS E
 INNER JOIN tblDepartment AS D
     ON E.[Department ID] = D.[Department ID]
 GO
+
+-- Advantages of using Views
+--1.) Views can be used to reduce the complexity of the database
+-- 2.) Views can be used as a mechanism to implement row and column level security.
+-- 3.) Views can be used to present aggregated data and hide detailed data.
+
+-- To modify a view - ALTER VIEW Statement
+-- To Drop a view - DROP VIEW VWNAME
