@@ -1533,3 +1533,12 @@ FROM tblEmployees1 AS E
 INNER JOIN tblDepartment AS D
     ON E.[Department ID] = D.[Department ID]
 GO
+
+-- To create a VIEW
+CREATE VIEW VWEmployeesByDepartment
+AS
+SELECT E.NAME, E.SALARY, D.[Department ID] ,D.[Departmnent Name], E.CITY
+FROM tblEmployees1 AS E
+INNER JOIN tblDepartment AS D
+    ON E.[Department ID] = D.[Department ID]
+GO
