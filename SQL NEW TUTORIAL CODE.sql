@@ -1551,5 +1551,12 @@ GO
 -- To modify a view - ALTER VIEW Statement
 -- To Drop a view - DROP VIEW VWNAME
 
+-- Call a View
 SELECT *
 FROM VWEmployeesByDepartment
+
+
+
+
+-- Part 40 - Updateable Views
+
