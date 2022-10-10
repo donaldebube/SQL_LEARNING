@@ -1477,3 +1477,59 @@ UNIQUE CLUSTERED (ID)
 
 
 -- Part 38 - Advantages and Disadvantages of Indexes (SKIP THIS)
+
+
+-- Part 39 - Views in SQL Server
+-- A veiw is nothing more than a saved SQL query. 
+-- A view can also be considered as a virtual table.
+
+-- Create a new table
+CREATE TABLE tblDepartment
+(
+    [Department ID] INT NOT NULL PRIMARY KEY, -- primary key column
+    [Departmnent Name] [NVARCHAR](50) NOT NULL,
+);
+GO
+
+-- Insert rows into table 'tblDepartment'
+INSERT INTO tblDepartment
+( -- columns to insert data into
+ [Department ID], [Departmnent Name]
+)
+VALUES
+( -- first row: values for the columns in the list above
+    1, 'IT'
+),
+( -- second row: values for the columns in the list above
+    2, 'Payroll'
+),
+( -- third row: values for the columns in the list above
+    3, 'HR'
+),
+( -- forth row: values for the columns in the list above
+    4, 'Admin'
+)
+
+GO
+
+SELECT *
+FROM tblEmployees1
+
+-- Add New Column
+ALTER TABLE tblEmployees1
+ADD [Department ID] INT
+GO
+
+-- Update rows in table 'tblEmployees1'
+UPDATE tblEmployees1
+SET
+    [Department ID] = 3
+WHERE ID = 6	/* add search conditions here */
+GO
+
+
+SELECT E.NAME, E.SALARY, D.[Department ID] ,D.[Departmnent Name], E.CITY
+FROM tblEmployees1 AS E
+INNER JOIN tblDepartment AS D
+    ON E.[Department ID] = D.[Department ID]
+GO
