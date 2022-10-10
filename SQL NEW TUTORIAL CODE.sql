@@ -1576,3 +1576,12 @@ SELECT *
 FROM tblEmployees1
 
 -- IT CHANGED!
+
+-- Delete date
+DELETE FROM VWEmployeesByDepartment
+WHERE [NAME] = 'Donald'
+
+sp_helpindex VWEmployeesByDepartment
+
+ALTER TABLE [dbo].[tblEmployees1] DROP CONSTRAINT [UQ_tblEmployees1_ID] WITH ( ONLINE = OFF )
+GO
