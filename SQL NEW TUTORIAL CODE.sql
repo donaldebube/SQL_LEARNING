@@ -1473,3 +1473,7 @@ UNIQUE CLUSTERED (ID)
 -- Useful points to remember:
 -- 1.) By default, a PRIMARY constraint, creates a unique clustered index, where as a UNIQUE Constarint creates a unique Non-clustered index. These defaults can be changed if you wish to.
 -- 2.) A UNIQUE constraint or a UNIQUE index cannot be created on an existing table, if the tabke contains duplicate values in the key columns. Obviously, to solve this, remove the key columns from the index definition or delete or update the duplicate values
+
+
+
+-- Part 38 - Advantages and Disadvantages of Indexes (SKIP THIS)
