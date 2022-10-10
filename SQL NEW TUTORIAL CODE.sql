@@ -1559,4 +1559,4 @@ FROM VWEmployeesByDepartment
 
 
 -- Part 40 - Updateable Views
-
+-- A view ia stored select statement
