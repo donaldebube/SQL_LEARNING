@@ -1550,3 +1550,6 @@ GO
 
 -- To modify a view - ALTER VIEW Statement
 -- To Drop a view - DROP VIEW VWNAME
+
+SELECT *
+FROM VWEmployeesByDepartment
