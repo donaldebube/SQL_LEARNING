@@ -1460,3 +1460,12 @@ FROM tblEmployees1
 
 -- Unique Index is used to enforce uniqueness of key values in the index.
 -- By default, a PRIMARY KEY constraint creates a unique clustered index.
+-- UNIQUENESS is a property of an indexand both CLUSTERED and NON-CLUSTERED indexes can be UNIQUE
+
+-- Unique Constraints are the same as Unique Index
+SELECT *
+FROM tblEmployees1
+
+ALTER TABLE tblEmployees1
+ADD CONSTRAINT UQ_tblEmployees1_ID
+UNIQUE CLUSTERED (ID)
