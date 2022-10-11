@@ -1637,6 +1637,7 @@ GO
 -- Verify if table created is correct
 SELECT *
 FROM tblProduct
+GO
 
 
 -- Create second table
