@@ -1594,3 +1594,35 @@ GO
 -- A VIEW id just a virtual table that does not store any data, by default.
 -- However, when you create an index pn a VIEW, the view gets materialized. This means, the view is now capable of storing data.
 -- In SQL server, we call them Indexed views and in Oracle, Materialized Views
+
+-- Example 1:
+
+-- Create two new tables.
+CREATE TABLE tblProductSales
+    (
+        [Product ID] INT PRIMARY KEY,
+        [Name] NVARCHAR(50),
+        [Unit Price] INT
+    )
+GO
+
+-- Insert Values into Table
+-- Insert rows into table 'tblProductSales'
+INSERT INTO tblProductSales
+( -- columns to insert data into
+ [Product ID], [Name], [Unit Price]
+)
+VALUES
+( -- first row: values for the columns in the list above
+    1, 'Books', 20
+),
+( -- second row: values for the columns in the list above
+    2, 'Pens', 14
+),
+( -- third row: values for the columns in the list above
+    3, 'Pencils', 11
+),
+( -- forth row: values for the columns in the list above
+    4, 'Clips', 10
+)
+GO
