@@ -1685,10 +1685,12 @@ VALUES
 )
 GO
 
+-- Verify if table created is correct
 SELECT *
 FROM tblProductSale
 GO
 
+-- Create View 
 CREATE VIEW VWTotalSalesByProduct
 WITH SCHEMABINDING
 AS
@@ -1701,6 +1703,10 @@ AS
         ON PS.[Product ID] =P.[Product ID]
     GROUP BY P.Name
 GO
+
+-- Verify if the view created is correct
+SELECT *
+FROM VWTotalSalesByProduct
 
 -- Guidelines for creating Indexed Views
 -- 1.) The view should be created with SchemaBinding option.
