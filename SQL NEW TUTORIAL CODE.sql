@@ -1704,6 +1704,21 @@ AS
     GROUP BY P.Name
 GO
 
+-- Change COUNT FUNCTION TO COUNT_BIG (*) FUNCTION
+ALTER VIEW VWTotalSalesByProduct
+WITH SCHEMABINDING
+AS
+    SELECT 
+        p.Name, 
+        SUM(ISNULL((PS.[Quantity Sold] * P.[Unit Price]), 0)) AS [Total Sales],
+        COUNT_BIG(*) AS [Total Transactions]
+    FROM dbo.tblProductSale AS PS
+    INNER JOIN dbo.tblProduct AS P
+        ON PS.[Product ID] =P.[Product ID]
+    GROUP BY P.Name
+GO
+
+
 -- Verify if the view created is correct
 SELECT *
 FROM VWTotalSalesByProduct
