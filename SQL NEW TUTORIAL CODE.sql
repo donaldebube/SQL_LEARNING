@@ -1713,3 +1713,8 @@ FROM VWTotalSalesByProduct
 -- 2.) If an aggregate function is the SELECT LIST, references an expression, and if there is a possibility for that expression to become NULL, then a replacement value should be specified.
 -- 3.) If GROUP BY specified, the view select list must contain a COUNT_BIG(*) expression
 -- 4.) The base tables in the view, should be referenced with 2 part name, i.e (dbo.tablename)
+
+-- CREATE AN INDEX ON THE VIEW
+CREATE UNIQUE CLUSTERED INDEX UIX_VWTotalSalesByProduct_Name
+    ON VWTotalSalesByProduct (Name)
+GO
