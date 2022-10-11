@@ -1696,8 +1696,14 @@ AS
         p.Name, 
         SUM(ISNULL((PS.[Quantity Sold] * P.[Unit Price]), 0)) AS [Total Sales],
         COUNT(PS.[Quantity Sold]) AS [Total Transactions]
-    FROM tblProductSale AS PS
-    INNER JOIN tblProduct AS P
+    FROM dbo.tblProductSale AS PS
+    INNER JOIN dbo.tblProduct AS P
         ON PS.[Product ID] =P.[Product ID]
     GROUP BY P.Name
 GO
+
+-- Guidelines for creating Indexed Views
+-- 1.) The view should be created with SchemaBinding option.
+-- 2.) If an aggregate function is the SELECT LIST, references an expression, and if there is a possibility for that expression to become NULL, then a replacement value should be specified.
+-- 3.) If GROUP BY specified, the view select list must contain a COUNT_BIG(*) expression
+-- 4.) The base tables in the view, should be referenced with 2 part name, i.e (dbo.tablename)
