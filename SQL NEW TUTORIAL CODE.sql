@@ -1642,10 +1642,48 @@ FROM tblProduct
 -- Create second table
 CREATE TABLE tblProductSale
     (
-        [Product ID] INT PRIMARY KEY,
+        [Product ID] INT,
         [Quantity Sold] INT
     )
 GO
 
 -- Insert rows into table 'tblProductSales'
+INSERT INTO tblProductSale
+    (
+        [Product ID], [Quantity Sold]
+    )
+VALUES
+(
+    1, 10
+),
+(
+    3, 23
+),
+(
+    4, 21
+),
+(
+    2, 12
+),
+(
+    1, 13
+),
+(
+    3, 12
+),
+(
+    4, 13
+),
+(
+    1, 11
+),
+(
+    2, 12
+),
+(
+    1, 14
+)
+GO
 
+SELECT *
+FROM tblProductSale
