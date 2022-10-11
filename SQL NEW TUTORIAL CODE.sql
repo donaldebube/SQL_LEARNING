@@ -1733,3 +1733,13 @@ FROM VWTotalSalesByProduct
 CREATE UNIQUE CLUSTERED INDEX UIX_VWTotalSalesByProduct_Name
     ON VWTotalSalesByProduct (Name)
 GO
+
+
+
+
+-- Part 42 - View Limitations
+
+-- 1.) You cannot pass parameters to a view. Table valued functions are excellent replacement for parameterized views.
+-- 2.) Rules and defaults cannot be associated with views.
+-- 3.) The ORDER BY clause is invalid in VIEW unless TOP or FOR XML is also specified.
+-- 4.) VIEWS cannot be based on temporary tables
