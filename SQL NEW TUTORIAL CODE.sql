@@ -1687,3 +1687,12 @@ GO
 
 SELECT *
 FROM tblProductSale
+
+SELECT 
+    p.Name, 
+    SUM(PS.[Quantity Sold] * P.[Unit Price]) AS [Total Sales],
+    COUNT(PS.[Quantity Sold]) AS [Total Transactions]
+FROM tblProductSale AS PS
+INNER JOIN tblProduct AS P
+    ON PS.[Product ID] =P.[Product ID]
+GROUP BY P.Name
