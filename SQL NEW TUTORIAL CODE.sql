@@ -1598,7 +1598,9 @@ GO
 -- Example 1:
 
 -- Create two new tables.
-CREATE TABLE tblProductSales
+
+-- Create first table
+CREATE TABLE tblProduct
     (
         [Product ID] INT PRIMARY KEY,
         [Name] NVARCHAR(50),
@@ -1606,9 +1608,14 @@ CREATE TABLE tblProductSales
     )
 GO
 
+-- Change Table Name
+EXEC sp_rename 'tblProductSales', 'tblProduct'
+GO
+
+
 -- Insert Values into Table
--- Insert rows into table 'tblProductSales'
-INSERT INTO tblProductSales
+-- Insert rows into table 'tblProduct'
+INSERT INTO tblProduct
 ( -- columns to insert data into
  [Product ID], [Name], [Unit Price]
 )
@@ -1626,3 +1633,19 @@ VALUES
     4, 'Clips', 10
 )
 GO
+
+-- Verify if table created is correct
+SELECT *
+FROM tblProduct
+
+
+-- Create second table
+CREATE TABLE tblProductSale
+    (
+        [Product ID] INT PRIMARY KEY,
+        [Quantity Sold] INT
+    )
+GO
+
+-- Insert rows into table 'tblProductSales'
+
