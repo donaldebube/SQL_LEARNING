@@ -1722,6 +1722,7 @@ GO
 -- Verify if the view created is correct
 SELECT *
 FROM VWTotalSalesByProduct
+GO
 
 -- Guidelines for creating Indexed Views
 -- 1.) The view should be created with SchemaBinding option.
