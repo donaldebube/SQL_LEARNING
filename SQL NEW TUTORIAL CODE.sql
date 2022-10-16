@@ -1745,3 +1745,5 @@ GO
 -- 2.) Rules and defaults cannot be associated with views.
 -- 3.) The ORDER BY clause is invalid in VIEW unless TOP or FOR XML is also specified.
 -- 4.) VIEWS cannot be based on temporary tables
+
+-- Work on Part 43 and 44 tomorrow
