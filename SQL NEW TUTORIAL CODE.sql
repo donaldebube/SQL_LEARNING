@@ -1763,4 +1763,11 @@ GO
 -- 1.) After Triggers, fires after the triggering action. The INSERT, UPDATE and DELETE statements, causes an after trigger to fire the respective statements complete execution.
 -- 2.) INSTEAD OF Triggers, fires instead of the triggering action. The INSERT, UPDATE and DELETE statements causes an INSTEAD OF Trigger to fire INSTEAD OF the respective statement execution
 
- 
+-- Example 1:
+
+-- First, create a new tablecalled "tblEmployeeAudit"
+CREATE TABLE tblEmployeeAudit
+(
+    ID INT PRIMARY KEY,
+    [AUDIT DATA] NVARCHAR (50)
+)
