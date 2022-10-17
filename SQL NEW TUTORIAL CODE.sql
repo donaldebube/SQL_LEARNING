@@ -1775,3 +1775,11 @@ CREATE TABLE tblEmployeeAudit
 -- Use tblEmployees1 for the example
 SELECT *
 FROM tblEmployees1
+GO
+
+-- CREATE A TRIGGER
+CREATE TRIGGER tr_tblEmployee_ForInsert
+ON tblEmployees1
+FOR INSERT
+AS 
+BEGIN
