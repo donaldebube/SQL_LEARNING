@@ -1788,4 +1788,4 @@ BEGIN
     SELECT @ID = ID 
     FROM inserted
 
-    
+    INSERT INTO tblEmployeeAudit
