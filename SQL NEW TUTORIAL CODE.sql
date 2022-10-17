@@ -1769,8 +1769,9 @@ GO
 CREATE TABLE tblEmployeeAudit
 (
     ID INT,
-    [AUDIT DATA] NVARCHAR (50)
+    [AUDIT DATA] NVARCHAR (500)
 )
+
 
 DROP TABLE tblEmployeeAudit
 
@@ -1784,7 +1785,7 @@ FROM tblEmployeeAudit
 GO
 
 -- CREATE A TRIGGER
-CREATE TRIGGER tr_tblEmployee_ForInsert
+CREATE TRIGGER tr_tblEmployees1_ForInsert
 ON tblEmployees1
 FOR INSERT
 AS 
@@ -1795,9 +1796,14 @@ BEGIN
     FROM inserted
 
     INSERT INTO tblEmployeeAudit
+    (
+        [ID]
+    )
     VALUES 
     (
-        'New employee with ID = ' + CONVERT(nvarchar(50), @ID) + ' is added at ' + CAST(GETDATE() AS nvarchar(50))
+        'New employee with ID = ' + CAST(@ID AS nvarchar(50)) + ' is added at ' + CAST(GETDATE() AS nvarchar(50))
     )
 END
 GO
+
+sp_helptext tblEmployees1
