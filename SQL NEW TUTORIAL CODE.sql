@@ -1746,4 +1746,15 @@ GO
 -- 3.) The ORDER BY clause is invalid in VIEW unless TOP or FOR XML is also specified.
 -- 4.) VIEWS cannot be based on temporary tables
 
--- Work on Part 43 and 44 tomorrow
+
+-- Part 43 - DML Triggers
+
+-- In SQL Server, there are 3 types of triggers
+-- 1.) DML Triggers
+-- 2.) DDL Triggers
+-- 3.) Logon Trigger
+
+-- DML Triggers are fired automatically in response to DML events (INSERT, UPDATE & DELETE)
+
+-- DML Triggers can be gain classified into 2 types.
+-- 1.) After triggers (Sometimes called as FOR triggers)
