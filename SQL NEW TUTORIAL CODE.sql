@@ -1785,7 +1785,7 @@ GO
 
 -- CREATE A TRIGGER
 -- For Insert Action
-ALTER TRIGGER tr_tblEmployees1_ForInsert
+CREATE TRIGGER tr_tblEmployees1_ForInsert
 ON tblEmployees1
 FOR INSERT
 AS 
@@ -1815,3 +1815,27 @@ INSERT INTO tblEmployees1
 VALUES 
     (6, 'Jane', 20000, 'Female', 'Edo', 3)
 GO
+
+-- For Delete Action
+CREATE TRIGGER tr_tblEmployees1_ForDelete
+ON tblEmployees1
+FOR DELETE
+AS 
+BEGIN
+    DECLARE @ID INT
+
+    SELECT @ID = ID 
+    FROM deleted
+
+    INSERT INTO tblEmployeeAudit
+    (
+        [AUDIT DATA]
+    )
+    VALUES
+    (
+        'An existing employee with ID ' + CAST(@ID AS nvarchar(50)) + ' is deleted at ' + CONVERT(nvarchar(50), GETDATE())
+    )
+END
+
+DELETE FROM tblEmployees1 
+WHERE ID = 6
