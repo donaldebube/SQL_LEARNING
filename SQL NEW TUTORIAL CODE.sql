@@ -1768,13 +1768,19 @@ GO
 -- First, create a new tablecalled "tblEmployeeAudit"
 CREATE TABLE tblEmployeeAudit
 (
-    ID INT PRIMARY KEY,
+    ID INT,
     [AUDIT DATA] NVARCHAR (50)
 )
+
+DROP TABLE tblEmployeeAudit
 
 -- Use tblEmployees1 for the example
 SELECT *
 FROM tblEmployees1
+GO
+
+SELECT *
+FROM tblEmployeeAudit
 GO
 
 -- CREATE A TRIGGER
@@ -1791,7 +1797,7 @@ BEGIN
     INSERT INTO tblEmployeeAudit
     VALUES 
     (
-        'New employee with ID, ' + CONVERT(nvarchar(10), @ID) + ' is added at ' + CAST(GETDATE() AS nvarchar(20))
+        'New employee with ID = ' + CONVERT(nvarchar(50), @ID) + ' is added at ' + CAST(GETDATE() AS nvarchar(50))
     )
 END
 GO
