@@ -1754,7 +1754,7 @@ GO
 -- 2.) DDL Triggers
 -- 3.) Logon Trigger
 
--- DML Triggers are fired automatically in response to DML events (INSERT, UPDATE & DELETE)
+-- DML (Data Manipulation Language) Triggers are fired automatically in response to DML events (INSERT, UPDATE & DELETE)
 
 -- DML Triggers can be gain classified into 2 types.
 -- 1.) After triggers (Sometimes called as FOR triggers)
