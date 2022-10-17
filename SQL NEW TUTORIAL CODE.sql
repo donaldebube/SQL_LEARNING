@@ -1771,3 +1771,7 @@ CREATE TABLE tblEmployeeAudit
     ID INT PRIMARY KEY,
     [AUDIT DATA] NVARCHAR (50)
 )
+
+-- Use tblEmployees1 for the example
+SELECT *
+FROM tblEmployees1
