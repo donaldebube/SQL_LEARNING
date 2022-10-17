@@ -1789,3 +1789,9 @@ BEGIN
     FROM inserted
 
     INSERT INTO tblEmployeeAudit
+    VALUES 
+    (
+        'New employee with ID, ' + CONVERT(nvarchar(10), @ID) + ' is added at ' + CAST(GETDATE() AS nvarchar(20))
+    )
+END
+GO
