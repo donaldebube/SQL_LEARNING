@@ -1783,3 +1783,9 @@ ON tblEmployees1
 FOR INSERT
 AS 
 BEGIN
+    DECLARE @ID INT
+
+    SELECT @ID = ID 
+    FROM inserted
+
+    
