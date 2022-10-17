@@ -1784,6 +1784,7 @@ FROM tblEmployeeAudit
 GO
 
 -- CREATE A TRIGGER
+-- For Insert Action
 ALTER TRIGGER tr_tblEmployees1_ForInsert
 ON tblEmployees1
 FOR INSERT
