@@ -1959,3 +1959,6 @@ SET
     GENDER = 'Male'
 WHERE ID =3
 GO
+
+SELECT *
+FROM tblEmployeeAudit
