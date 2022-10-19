@@ -1853,3 +1853,8 @@ ON tblEmployees1
 FOR UPDATE
 AS
 BEGIN
+    SELECT *
+    FROM deleted
+    SELECT *
+    FROM deleted
+END
