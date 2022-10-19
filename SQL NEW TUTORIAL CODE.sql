@@ -1924,6 +1924,12 @@ BEGIN
 
         IF (@OldCity <> @NewCity)
             SET @AuditString = @AuditString + ' CITY from ' + @OldCity + ' to ' + @NewCity
+        
+        IF (@OldDepartmentId <> @NewDepartmentId)
+            SET @AuditString = @AuditString + ' Department ID from ' + @OldDepartmentId + ' to ' + @NewDepartmentId
+        
+        IF (@OldGender <> @NewGender)
+            SET @AuditString = @AuditString + ' Gender from ' + @OldGender + ' to ' + @NewGender
 
 
 
