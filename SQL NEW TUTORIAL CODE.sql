@@ -1845,3 +1845,11 @@ WHERE ID = 6
 -- Use the tblEmployees table for the update action
 SELECT *
 FROM tblEmployees1
+GO
+
+-- For UPDATE action
+CREATE TRIGGER tr_tblEmployees1_ForUpdate
+ON tblEmployees1
+FOR UPDATE
+AS
+BEGIN
