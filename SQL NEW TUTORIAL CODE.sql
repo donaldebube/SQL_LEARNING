@@ -1878,4 +1878,7 @@ AS
 BEGIN
     DECLARE @ID INT
     DECLARE @OldName NVARCHAR(50), @NewName NVARCHAR(50)
-    DECLARE @
+    DECLARE @OldSalary INT, @NewSalary INT
+    DECLARE @OldGender NVARCHAR(50), @NewGender NVARCHAR(50)
+    DECLARE @OldCity NVARCHAR(50), @NewCity NVARCHAR(50)
+    DECLARE @OldDepartmentId INT, @NewDepartmentId INT
