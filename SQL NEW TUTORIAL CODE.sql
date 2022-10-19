@@ -1918,6 +1918,10 @@ BEGIN
         FROM deleted
         WHERE ID = @ID
 
+        SET @AuditString = 'Employee with ID = ' + CAST(@ID AS nvarchar(50)) + ' changed '
+        IF (@OldName <> @NewName)
+            SET @AuditString = @AuditString + ' NAME from ' + @OldName + ' to ' + @NewName
+
 
 
 
