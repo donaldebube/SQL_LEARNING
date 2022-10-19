@@ -1841,5 +1841,7 @@ DELETE FROM tblEmployees1
 WHERE ID = 6
 
 -- Part 44 - After Update Triggers
+
+-- Use the tblEmployees table for the update action
 SELECT *
 FROM tblEmployees1
