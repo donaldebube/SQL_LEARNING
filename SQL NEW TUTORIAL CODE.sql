@@ -1916,6 +1916,7 @@ BEGIN
             @NewCity = CITY,
             @NewDepartmentId = [DEPARTMENT ID]
         FROM deleted
+        WHERE ID = @ID
 
 
 
