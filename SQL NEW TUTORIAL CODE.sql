@@ -1841,3 +1841,5 @@ DELETE FROM tblEmployees1
 WHERE ID = 6
 
 -- Part 44 - After Update Triggers
+SELECT *
+FROM tblEmployees1
