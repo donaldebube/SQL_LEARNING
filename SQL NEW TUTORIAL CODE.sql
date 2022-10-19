@@ -1950,4 +1950,12 @@ BEGIN
 END
 GO
 
-
+ 
+-- Test Update
+UPDATE tblEmployees1 
+SET 
+    NAME = 'Donald',
+    SALARY = 50000,
+    GENDER = 'Male'
+WHERE ID =3
+GO
