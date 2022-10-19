@@ -1867,3 +1867,5 @@ SET
     GENDER = 'Female'
 WHERE ID = 3
 GO  
+
+DROP TRIGGER tr_tblEmployees1_ForUpdate
