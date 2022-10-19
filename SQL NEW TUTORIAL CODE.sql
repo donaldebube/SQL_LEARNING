@@ -1911,5 +1911,14 @@ BEGIN
 
         SELECT 
             @OldName = NAME,
-            
+            @NewGender = GENDER, 
+            @NewSalary = SALARY,
+            @NewCity = CITY,
+            @NewDepartmentId = [DEPARTMENT ID]
+        FROM deleted
+
+
+
+
+
 
