@@ -1869,3 +1869,13 @@ WHERE ID = 3
 GO  
 
 DROP TRIGGER tr_tblEmployees1_ForUpdate
+GO
+-- Example
+CREATE TRIGGER tr_tblEmployees1_ForUpdate
+ON tblEmployees1
+FOR UPDATE
+AS 
+BEGIN
+    DECLARE @ID INT
+    DECLARE @OldName NVARCHAR(50), @NewName NVARCHAR(50)
+    DECLARE @
