@@ -1840,4 +1840,4 @@ END
 DELETE FROM tblEmployees1 
 WHERE ID = 6
 
--- Part 44 -
+-- Part 44 - After Update Triggers
