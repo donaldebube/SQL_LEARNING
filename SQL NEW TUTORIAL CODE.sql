@@ -1920,10 +1920,10 @@ BEGIN
 
         SET @AuditString = 'Employee with ID = ' + CAST(@ID AS nvarchar(50)) + ' changed '
         IF (@OldName <> @NewName)
-            SET @AuditString = @AuditString + ' NAME from ' + @OldName + ' to ' + @NewName
+            SET @AuditString = @AuditString + ' Name from ' + @OldName + ' to ' + @NewName
 
         IF (@OldCity <> @NewCity)
-            SET @AuditString = @AuditString + ' CITY from ' + @OldCity + ' to ' + @NewCity
+            SET @AuditString = @AuditString + ' City from ' + @OldCity + ' to ' + @NewCity
         
         IF (@OldDepartmentId <> @NewDepartmentId)
             SET @AuditString = @AuditString + ' Department ID from ' + @OldDepartmentId + ' to ' + @NewDepartmentId
@@ -1931,7 +1931,23 @@ BEGIN
         IF (@OldGender <> @NewGender)
             SET @AuditString = @AuditString + ' Gender from ' + @OldGender + ' to ' + @NewGender
 
+        IF (@OldSalary <> @NewSalary)
+            SET @AuditString = @AuditString + ' Salary from ' + @OldSalary + ' to ' + @NewSalary
 
+        INSERT INTO tblEmployeeAudit
+        (
+            [AUDIT DATA]
+        )
+        VALUES
+        (
+            @AuditString
+        )
 
+        DELETE 
+            FROM #TempTable 
+            WHERE ID = @ID
+    END
+END
+GO
 
 
