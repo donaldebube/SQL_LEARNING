@@ -1922,6 +1922,8 @@ BEGIN
         IF (@OldName <> @NewName)
             SET @AuditString = @AuditString + ' NAME from ' + @OldName + ' to ' + @NewName
 
+        IF (@OldCity <> @NewCity)
+            SET @AuditString = @AuditString + ' CITY from ' + @OldCity + ' to ' + @NewCity
 
 
 
