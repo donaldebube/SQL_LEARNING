@@ -1909,3 +1909,7 @@ BEGIN
             @NewDepartmentId = [DEPARTMENT ID]
         FROM #TempTable
 
+        SELECT 
+            @OldName = NAME,
+            
+
