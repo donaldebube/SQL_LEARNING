@@ -1858,3 +1858,12 @@ BEGIN
     SELECT *
     FROM deleted
 END
+
+-- Update row
+UPDATE tblEmployees1 
+SET 
+    NAME = 'Tosin',
+    SALARY = 20000,
+    GENDER = 'Female'
+WHERE ID = 3
+GO  
