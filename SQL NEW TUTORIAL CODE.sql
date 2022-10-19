@@ -1885,4 +1885,6 @@ BEGIN
 
     DECLARE @AuditString NVARCHAR(1000)
 
-    
+    SELECT *
+    INTO #TempTable
+    FROM inserted
