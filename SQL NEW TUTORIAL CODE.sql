@@ -1882,3 +1882,7 @@ BEGIN
     DECLARE @OldGender NVARCHAR(50), @NewGender NVARCHAR(50)
     DECLARE @OldCity NVARCHAR(50), @NewCity NVARCHAR(50)
     DECLARE @OldDepartmentId INT, @NewDepartmentId INT
+
+    DECLARE @AuditString NVARCHAR(1000)
+
+    
