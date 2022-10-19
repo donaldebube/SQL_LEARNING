@@ -1888,3 +1888,24 @@ BEGIN
     SELECT *
     INTO #TempTable
     FROM inserted
+
+    WHILE 
+        (
+            EXISTS 
+            (
+                SELECT ID 
+                FROM #TempTable  
+            )
+        )
+    BEGIN
+        SET @AuditString = ''
+
+        SELECT TOP 1 
+            @ID = ID, 
+            @NewName = NAME,
+            @NewGender = GENDER, 
+            @NewSalary = SALARY,
+            @NewCity = CITY,
+            @NewDepartmentId = [DEPARTMENT ID]
+        FROM #TempTable
+
