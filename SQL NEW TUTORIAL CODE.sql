@@ -1871,7 +1871,7 @@ GO
 DROP TRIGGER tr_tblEmployees1_ForUpdate
 GO
 -- Example
-CREATE TRIGGER tr_tblEmployees1_ForUpdate
+ALTER TRIGGER tr_tblEmployees1_ForUpdate
 ON tblEmployees1
 FOR UPDATE
 AS 
@@ -1919,20 +1919,20 @@ BEGIN
         WHERE ID = @ID
 
         SET @AuditString = 'Employee with ID = ' + CAST(@ID AS nvarchar(50)) + ' changed '
-        IF (@OldName <> @NewName)
-            SET @AuditString = @AuditString + ' Name from ' + @OldName + ' to ' + @NewName
-
-        IF (@OldCity <> @NewCity)
-            SET @AuditString = @AuditString + ' City from ' + @OldCity + ' to ' + @NewCity
+            IF (@OldName != @NewName)
+                SET @AuditString = @AuditString + ' Name from ' + @OldName + ' to ' + @NewName
         
-        IF (@OldDepartmentId <> @NewDepartmentId)
-            SET @AuditString = @AuditString + ' Department ID from ' + @OldDepartmentId + ' to ' + @NewDepartmentId
-        
-        IF (@OldGender <> @NewGender)
-            SET @AuditString = @AuditString + ' Gender from ' + @OldGender + ' to ' + @NewGender
+            IF (@OldCity != @NewCity)
+                SET @AuditString = @AuditString + ' City from ' + @OldCity + ' to ' + @NewCity
+            
+            IF(@OldDepartmentId <> @NewDepartmentId)
+                SET @AuditString = @AuditString + ' Department ID from ' + @OldDepartmentId + ' to ' + @NewDepartmentId
+            
+            IF(@OldGender <> @NewGender)
+                SET @AuditString = @AuditString + ' Gender from ' + @OldGender + ' to ' + @NewGender
 
-        IF (@OldSalary <> @NewSalary)
-            SET @AuditString = @AuditString + ' Salary from ' + @OldSalary + ' to ' + @NewSalary
+            IF(@OldSalary <> @NewSalary)
+                SET @AuditString = @AuditString + ' Salary from ' + @OldSalary + ' to ' + @NewSalary
 
         INSERT INTO tblEmployeeAudit
         (
@@ -1956,9 +1956,13 @@ UPDATE tblEmployees1
 SET 
     NAME = 'Donald',
     SALARY = 50000,
-    GENDER = 'Male'
-WHERE ID =3
+    GENDER = 'Male',
+    CITY = 'DELTA'
+WHERE ID =4
 GO
 
 SELECT *
 FROM tblEmployeeAudit
+
+SELECT *
+FROM tblEmployees1
