@@ -1968,3 +1968,9 @@ SELECT *
 FROM tblEmployees1
 
 -- Figure out the problem later today and Happy Birthday Donald.
+
+-- Skip Part 45, 46 and 47.
+
+-- Start at Part 48
+-- Part 48 - Derived Tbles and Common Table Expressions
+
