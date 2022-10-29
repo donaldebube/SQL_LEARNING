@@ -1975,3 +1975,4 @@ FROM tblEmployees1
 -- Part 48 - Derived Tbles and Common Table Expressions
 
 -- NOTE: Views get saved in the database and can be available to othere queries and stored procedures.
+-- Howereve
