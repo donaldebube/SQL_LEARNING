@@ -1974,3 +1974,4 @@ FROM tblEmployees1
 -- Start at Part 48
 -- Part 48 - Derived Tbles and Common Table Expressions
 
+-- NOTE: Views get saved in the database and can be available to othere queries and stored procedures.
