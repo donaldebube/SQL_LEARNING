@@ -1997,6 +1997,26 @@ FROM VWEmployeeCount
 WHERE [Total Employees] < 2
 GO
 
+
+-- NOTE: Temporary tables are stored in TempDB. Local temporary tables are visible only in the current session and 
+-- can be shared between nested stored procedures calls.
+-- Global temp tables are visible to other sessions and are destroyed when the last connection referencing the table is closed.
+
+
+-- Using Temp Tables
+SELECT 
+    D.[Department ID],
+    D.[Departmnent Name],
+    COUNT(*) AS [Total Employees]
+INTO #TempEmployeeCount
+FROM tblEmployees1 AS E
+INNER JOIN tblDepartment AS D
+    ON E.[Department ID] = D.[Department ID]
+GROUP BY D.[Department ID], D.[Departmnent Name]
+
+
+
+
 SELECT *
 FROM tblDepartment
 
