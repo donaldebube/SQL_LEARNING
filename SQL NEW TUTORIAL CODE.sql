@@ -2036,8 +2036,12 @@ FROM
             ON E.[Department ID] = D.[Department ID]
         GROUP BY D.[Departmnent Name], D.[Department ID]
     )
-AS [Employee Count]
+AS [Employee Count] -- This is a DERIVED TABLE.
 WHERE [Total Employees] < 2
+
+
+
+-- NOTE:
 
 
 SELECT *
