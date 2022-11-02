@@ -2018,7 +2018,21 @@ SELECT *
 FROM #TempEmployeeCount
 WHERE [Total Employees] < 2
 
+DROP TABLE #TempEmployeeCount
 
+
+-- NOTE: Derived Tables are available only in the context of the current query
+-- Using Derived Table
+
+SELECT *
+FROM 
+    (
+        SELECT D.
+        FROM tblEmployees1 AS E
+        INNER JOIN tblDepartment AS D
+            ON E.[Department ID] = D.[Department ID]
+        GROUP BY 
+    )
 
 
 SELECT *
