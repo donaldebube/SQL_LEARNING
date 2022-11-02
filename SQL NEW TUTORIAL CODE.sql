@@ -2014,6 +2014,10 @@ INNER JOIN tblDepartment AS D
     ON E.[Department ID] = D.[Department ID]
 GROUP BY D.[Department ID], D.[Departmnent Name]
 
+SELECT *
+FROM #TempEmployeeCount
+WHERE [Total Employees] < 2
+
 
 
 
