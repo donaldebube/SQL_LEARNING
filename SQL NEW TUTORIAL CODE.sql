@@ -2038,6 +2038,7 @@ FROM
     )
 AS [Employee Count] -- This is a DERIVED TABLE.
 WHERE [Total Employees] < 2
+GO
 
 
 
@@ -2055,8 +2056,11 @@ AS
         FROM tblEmployees1 AS E
         INNER JOIN tblDepartment AS D
             ON E.[Department ID] = D.[Department ID]
-        GROUP BY 
+        GROUP BY D.[Department ID],D.[Departmnent Name]
     )
+SELECT [Departmnent Name], [Total Employees]
+FROM [Employee Count]
+WHERE [Total Employees] < 2
 GO
 
 SELECT *
