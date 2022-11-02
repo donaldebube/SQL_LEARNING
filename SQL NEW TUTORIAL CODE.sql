@@ -1963,16 +1963,37 @@ GO
 
 SELECT *
 FROM tblEmployeeAudit
+GO
 
 SELECT *
 FROM tblEmployees1
+GO
 
 -- Figure out the problem later today and Happy Birthday Donald.
 
 -- Skip Part 45, 46 and 47.
 
 -- Start at Part 48
--- Part 48 - Derived Tbles and Common Table Expressions
+-- Part 48 - Derived Tables and Common Table Expressions
 
 -- NOTE: Views get saved in the database and can be available to othere queries and stored procedures.
--- Howereve
+-- However, if this view is only used at this one place, it can be easily eliminated using other options, like CTE, derived tables, temp tables, table variables.
+
+-- Using Views
+CREATE VIEW VWEmployeeCount
+AS
+SELECT
+    D.[Departmnent Name], 
+    D.[Department ID], 
+    COUNT(*) AS [Total Employees] 
+FROM tblEmployees1 AS E
+INNER JOIN tblDepartment AS D
+ ON E.[Department ID] = D.[Department ID]
+GROUP BY    D.[Department ID], D.[Departmnent Name]
+GO
+
+SELECT *
+FROM tblDepartment
+
+SELECT * 
+FROM tblEmployees1
