@@ -2068,3 +2068,5 @@ FROM tblDepartment
 
 SELECT * 
 FROM tblEmployees1
+
+-- Part 49 -- CTE (Common Table )
