@@ -2041,8 +2041,23 @@ WHERE [Total Employees] < 2
 
 
 
--- NOTE:
+-- NOTE: A CTE can be thought of as a temporary result set that is defined within the execution scope of a single SELECT, INSERT, UPDATE, DELETE or CREATE VIEW statement.
+-- A CTE is similar to a derived table in that it is not stored as an object and lasts only for the duration of the query
 
+-- Using CTE (Common Table Expressions)
+WITH [Employee Count]
+AS
+    (
+        SELECT 
+            D.[Department ID], 
+            D.[Departmnent Name], 
+            COUNT(*) AS [Total Employees]
+        FROM tblEmployees1 AS E
+        INNER JOIN tblDepartment AS D
+            ON E.[Department ID] = D.[Department ID]
+        GROUP BY 
+    )
+GO
 
 SELECT *
 FROM tblDepartment
