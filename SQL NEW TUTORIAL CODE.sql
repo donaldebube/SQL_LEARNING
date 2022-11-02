@@ -1992,6 +1992,11 @@ INNER JOIN tblDepartment AS D
 GROUP BY    D.[Department ID], D.[Departmnent Name]
 GO
 
+SELECT [Departmnent Name], [Total Employees]
+FROM VWEmployeeCount
+WHERE [Total Employees] < 2
+GO
+
 SELECT *
 FROM tblDepartment
 
