@@ -2104,21 +2104,32 @@ ORDER BY [Total Employees]
 
 -- It is possible to create more than one CTE using the WITH KEYWORD. Just use a comma to seperate the different CTE codes
 --For example:
-WITH [Employee Count 2]
+WITH [Employee Count 2] ([Department Name], Total) 
 AS 
 (
         SELECT 
-            [Department ID], 
-            COUNT(*) AS [Total Employees]
-        FROM tblEmployees1
-        GROUP BY [Department ID]
+            D.[Departmnent Name],
+            COUNT(D.[Department ID]) AS [Total Employees]
+        FROM tblEmployees1 AS E
+        INNER JOIN tblDepartment AS D
+            ON E.[Department ID] = D.[Department ID]
+        WHERE [Departmnent Name] IN ('HR', 'IT')
+        GROUP BY [Departmnent Name]
 ),
-[Employee Count 3]
+[Employee Count 3] ([Department Name], Total)
 AS 
 (
         SELECT 
-            [Department ID], 
-            COUNT(*) AS [Total Employees]
-        FROM tblEmployees1
-        GROUP BY [Department ID]
+             D.[Departmnent Name],
+            COUNT(D.[Department ID]) AS [Total Employees]
+        FROM tblEmployees1 AS E
+        INNER JOIN tblDepartment AS D
+            ON E.[Department ID] = D.[Department ID]
+        WHERE [Departmnent Name] IN ('Admin', 'Payroll')
+        GROUP BY [Departmnent Name]
 )
+SELECT *
+FROM [Employee Count 2]
+UNION
+SELECT *
+FROM [Employee Count 3]
