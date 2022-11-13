@@ -2120,14 +2120,14 @@ AS
 [Employee Count 3] ([Department Name], Total)
 AS 
 (
-        SELECT 
-             D.[Departmnent Name],
-            COUNT(D.[Department ID]) AS [Total Employees]
-        FROM tblEmployees1 AS E
-        INNER JOIN tblDepartment AS D
-            ON E.[Department ID] = D.[Department ID]
-        WHERE [Departmnent Name] IN ('Admin', 'Payroll')
-        GROUP BY [Departmnent Name]
+    SELECT 
+        D.[Departmnent Name],
+        COUNT(D.[Department ID]) AS [Total Employees]
+    FROM tblEmployees1 AS E
+    INNER JOIN tblDepartment AS D
+       ON E.[Department ID] = D.[Department ID]
+    WHERE [Departmnent Name] IN ('Admin', 'Payroll')
+    GROUP BY [Departmnent Name]
 )
 SELECT *
 FROM [Employee Count 2]
@@ -2137,3 +2137,15 @@ FROM [Employee Count 3]
 
 
 -- Part 50 - Updatable CTEs
+-- NOTE: If a CTE is created on one base table, then it is possible to UPDATE the CTE, which in turn will update the underlying table.
+
+-- For example:
+-- Creating a simple CTE
+WITH Employee_Name_Gender
+AS
+(
+    SELECT ID, NAME, GENDER
+    FROM tblEmployees1
+)
+SELECT *
+FROM Employee_Name_Gender
