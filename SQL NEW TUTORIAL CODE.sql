@@ -2102,6 +2102,7 @@ INNER JOIN [Employee Count 2] AS EC
     ON D.[Department ID] = EC.[Department ID]
 ORDER BY [Total Employees]
 
+-- MULTIPLE CTEs
 -- It is possible to create more than one CTE using the WITH KEYWORD. Just use a comma to seperate the different CTE codes
 --For example:
 WITH [Employee Count 2] ([Department Name], Total) 
