@@ -2095,7 +2095,7 @@ AS
         FROM tblEmployees1
         GROUP BY [Department ID]
 )
-SELECT *
+SELECT [Departmnent Name], [Total Employees]
 FROM tblDepartment AS D
 INNER JOIN [Employee Count 2] AS EC
     ON D.[Department ID] = EC.[Department ID]
