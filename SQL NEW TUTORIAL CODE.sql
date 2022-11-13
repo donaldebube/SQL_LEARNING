@@ -2166,7 +2166,7 @@ WHERE ID = 2
 WITH Employee_by_Department
 AS 
 (
-    SELECT *
+    SELECT ID, NAME, GENDER, [Departmnent Name]
     FROM tblEmployees1 AS E
     INNER JOIN tblDepartment AS D
         ON E.[Department ID] = D.[Department ID]
