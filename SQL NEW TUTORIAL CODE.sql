@@ -2086,4 +2086,17 @@ INNER JOIN tblDepartment AS D
 GROUP BY [Departmnent Name], D.[Department ID]
 GO
 -- Creating a CTE
-NEW 
+WITH [Employee Count 2]
+AS 
+(
+        SELECT 
+            [Department ID], 
+            COUNT(*) AS [Total Employees]
+        FROM tblEmployees1
+        GROUP BY [Department ID]
+)
+SELECT [Departmnent Name], [Total Employees]
+FROM tblDepartment AS D
+INNER JOIN [Employee Count 2] AS EC
+    ON D.[Department ID] = EC.[Department ID]
+ORDER BY [Total Employees]
