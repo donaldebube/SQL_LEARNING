@@ -2070,3 +2070,17 @@ SELECT *
 FROM tblEmployees1
 
 -- Part 49 -- CTE (Common Table )
+-- Common Table Expression (CTE) is introduced in SQL server 2005. 
+-- A CTE is a TEMPORARY result set, that can be referenced within a SELECT, INSERT, UPDATE or DELETE statement, that immediately follows the CTE.
+
+SELECT *
+FROM tblEmployees1
+
+-- SELECT *
+-- FROM tblDepartment
+
+SELECT D.[Departmnent Name], D.[Department ID] , COUNT([Departmnent Name]) AS [Department/Staff]
+FROM tblEmployees1 AS E
+INNER JOIN tblDepartment AS D
+    ON E.[Department ID] = D.[Department ID]
+GROUP BY [Departmnent Name], D.[Department ID]
