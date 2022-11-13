@@ -2160,3 +2160,18 @@ AS
 UPDATE Employee_Name_Gender
 SET GENDER = 'Male' 
 WHERE ID = 2
+
+-- NOTE: If a CTE is based on more than one table, and if the UPDATE affects only one base table, then the update is allowed.
+-- For example:
+WITH Employee_by_Department
+AS 
+(
+    SELECT *
+    FROM tblEmployees1 AS E
+    INNER JOIN tblDepartment AS D
+        ON E.[Department ID] = D.[Department ID]
+    
+)
+UPDATE Employee_by_Department
+SET GENDER = 'Female'
+WHERE ID = 2
