@@ -2175,3 +2175,5 @@ AS
 UPDATE Employee_by_Department
 SET GENDER = 'Female'
 WHERE ID = 2
+
+-- NOTE: If a CTE is based on multiple tables and if the update table affects more than one base table, then the UPDATE is not allowed.
