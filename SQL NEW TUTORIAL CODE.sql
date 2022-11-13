@@ -2149,3 +2149,14 @@ AS
 )
 SELECT *
 FROM Employee_Name_Gender
+
+-- Updating a CTE
+WITH Employee_Name_Gender
+AS
+(
+    SELECT ID, NAME, GENDER
+    FROM tblEmployees1
+)
+UPDATE Employee_Name_Gender
+SET GENDER = 'Male' 
+WHERE ID = 2
