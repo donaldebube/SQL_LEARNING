@@ -2191,3 +2191,5 @@ AS
 UPDATE Employee_by_Department
 SET GENDER = 'Female', [Departmnent Name] = 'IT'
 WHERE ID = 2
+
+-- NOTE: A CTE is based on more than one base table, and if the UPDATE affects only one base table, the UPDATE affects only one base tabke, the UPDATE succeeds (but not as expected always)
