@@ -2134,3 +2134,6 @@ FROM [Employee Count 2]
 UNION
 SELECT *
 FROM [Employee Count 3]
+
+
+-- Part 50 - Updatable CTEs
