@@ -2206,9 +2206,9 @@ GO
 CREATE TABLE tblStaffInfo
 (
  -- primary key column
-    [Employee ID] INT NOT NULL,
+    [Employee ID] INT,
     [Full Name] [NVARCHAR](50),
-    [Manager ID] INT NOT NULL
+    [Manager ID] INT
     -- specify more columns here
 );
 GO
@@ -2226,10 +2226,14 @@ VALUES
 (1, 'Tom', 2),
 (2, 'Josh', NULL),
 (3, 'Mike', 2),
-(4, 'John', 2),
-(5, 'Pam', 2),
-(6, 'Mary', 2),
-(7, 'James', 2),
-(8, 'Sam', 2),
-(9, 'Simon', 2)
+(4, 'John', 3),
+(5, 'Pam', 1),
+(6, 'Mary', 3),
+(7, 'James', 1),
+(8, 'Sam', 5),
+(9, 'Simon', 1)
 GO
+
+
+SELECT *
+FROM tblStaffInfo
