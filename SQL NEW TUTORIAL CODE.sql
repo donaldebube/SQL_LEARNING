@@ -2200,7 +2200,6 @@ GO
 -- Part 51 - Recursive CTEs and the problems they solve
 -- Joining a table with itself is called a self join
 
--- Using the tblPerson database, we want to map different employees to their respective managers while showing the hierarchy level of each employee
 -- Create a new table called 'TableName' in schema 'SchemaName'
 -- Create the table in the specified schema
 CREATE TABLE tblStaffInfo
@@ -2234,6 +2233,6 @@ VALUES
 (9, 'Simon', 1)
 GO
 
-
 SELECT *
 FROM tblStaffInfo
+GO
