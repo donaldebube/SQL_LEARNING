@@ -2236,3 +2236,10 @@ GO
 SELECT *
 FROM tblStaffInfo
 GO
+
+-- Using the tblStaffInfo database, we want to map different employees to their respective managers while showing the hierarchy level of each employee
+-- Using Recursive CTEs, this can be easily done.
+
+-- A recursive CTE is a CTE that referneces itself.
+
+
