@@ -354,9 +354,10 @@ WHERE EmployeeSalary.EmployeeID IS NOT NULL
 --Self Join is simply joining a table with itself.
 SELECT *
 FROM tblPerson
+-- GO
 
 --Left Self Join
-SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
+SELECT E.[First Name] AS [Employee Name], M.[First Name] AS [Manager Name]
 FROM tblPerson E
 LEFT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
@@ -2191,5 +2192,44 @@ AS
 UPDATE Employee_by_Department
 SET GENDER = 'Female', [Departmnent Name] = 'IT'
 WHERE ID = 2
+GO
 
 -- NOTE: A CTE is based on more than one base table, and if the UPDATE affects only one base table, the UPDATE affects only one base tabke, the UPDATE succeeds (but not as expected always)
+
+
+-- Part 51 - Recursive CTEs and the problems they solve
+-- Joining a table with itself is called a self join
+
+-- Using the tblPerson database, we want to map different employees to their respective managers while showing the hierarchy level of each employee
+-- Create a new table called 'TableName' in schema 'SchemaName'
+-- Create the table in the specified schema
+CREATE TABLE tblStaffInfo
+(
+ -- primary key column
+    [Employee ID] INT NOT NULL,
+    [Full Name] [NVARCHAR](50),
+    [Manager ID] INT NOT NULL
+    -- specify more columns here
+);
+GO
+-- DROP TABLE tblStaffInfo
+-- GO
+
+-- Insert rows into table 'tblStaffInfo'
+INSERT INTO tblStaffInfo
+( -- columns to insert data into
+    [Employee ID], 
+    [Full Name], 
+    [Manager ID]
+)
+VALUES
+(1, 'Tom', 2),
+(2, 'Josh', NULL),
+(3, 'Mike', 2),
+(4, 'John', 2),
+(5, 'Pam', 2),
+(6, 'Mary', 2),
+(7, 'James', 2),
+(8, 'Sam', 2),
+(9, 'Simon', 2)
+GO
