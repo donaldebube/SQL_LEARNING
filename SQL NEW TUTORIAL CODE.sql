@@ -2261,9 +2261,9 @@ AS
     ON SI.[Manager ID] = EC.[Employee ID]
 )
 SELECT 
-    Emp.[Full Name] AS [Employee Name], 
-    ISNULL(Mgr.[Full Name], 'Super Boss') AS [Manager Name],
-    Emp.[Level]
+    -- Emp.[Full Name] AS [Employee Name], 
+    -- ISNULL(Mgr.[Full Name], 'Super Boss') AS [Manager Name],
+    -- Emp.[Level]
 FROM EmployeesCTE AS Emp
 LEFT JOIN EmployeesCTE AS Mgr
 ON Emp.[Manager ID] = Mgr.[Employee ID]
