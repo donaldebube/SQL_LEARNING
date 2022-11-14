@@ -2242,4 +2242,22 @@ GO
 
 -- A recursive CTE is a CTE that referneces itself.
 
+WITH EmployeesCTE ([Employee ID], [Full Name], [Manager ID], [Level])
+AS 
+(
+    SELECT [Employee ID], [Full Name], [Manager ID], 1
+    FROM tblStaffInfo
+    WHERE [Manager ID] IS NULL
+
+    UNION ALL
+
+    SELECT 
+        SI.[Employee ID], 
+        SI.[Full Name], 
+        SI.[Manager ID], 
+        EC.[Level] + 1
+    FROM tblStaffInfo AS SI
+    INNER JOIN EmployeesCTE AS EC
+    ON SI.[Manager ID] = EC.[Employee ID]
+)
 
