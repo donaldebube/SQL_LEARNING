@@ -2306,3 +2306,5 @@ INNER JOIN tblDepartment AS D
 ON E.[Department ID] = D.[Department ID]
 GO
 
+-- Part 53 - 2NF & 3NF
+
