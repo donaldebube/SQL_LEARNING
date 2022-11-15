@@ -2268,3 +2268,8 @@ FROM EmployeesCTE AS Emp
 LEFT JOIN EmployeesCTE AS Mgr
 ON Emp.[Manager ID] = Mgr.[Employee ID]
 GO
+
+
+-- Part 52 - Database Normalization
+-- DATABASE NORMALIZATION is the process of organizing data to minimize data redundancy (data duplication), which in turn ensures data consistency.
+--
