@@ -2272,4 +2272,8 @@ GO
 
 -- Part 52 - Database Normalization
 -- DATABASE NORMALIZATION is the process of organizing data to minimize data redundancy (data duplication), which in turn ensures data consistency.
---
+
+-- PROBLEMS OF DATA REDUNDANCY
+-- 1.) Disk Space Wastage
+-- 2.) Data Inconsistency
+-- 3.) DML queries can become slow.
