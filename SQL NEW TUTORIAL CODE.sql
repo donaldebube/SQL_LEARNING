@@ -2307,4 +2307,8 @@ ON E.[Department ID] = D.[Department ID]
 GO
 
 -- Part 53 - 2NF & 3NF
+-- A table is said to be in the 2NF, if 
+-- 1.) The table meets all the conditions of 1NF
+-- 2.) Move redundant data to a seperate table
+-- 3.) Create relationships between these tables using foreign keys.
 
