@@ -2284,3 +2284,25 @@ GO
 -- 1.) The data in each column should be atomic. No multiple values, separated by comma.
 -- 2.) The table does not contain any repeating column groups.
 -- 3.) Identify each record uniquely using primary key.
+
+-- Example of a First Normal Form (1NF)
+-- Table 1
+SELECT *
+FROM tblEmployees1
+
+-- Table 2
+SELECT *
+FROM tblDepartment
+
+-- First Normal Form (1NF) Table
+SELECT 
+    E.NAME,
+    E.SALARY,
+    E.GENDER,
+    E.CITY,
+    D.[Departmnent Name]
+FROM tblEmployees1 AS E
+INNER JOIN tblDepartment AS D
+ON E.[Department ID] = D.[Department ID]
+GO
+
