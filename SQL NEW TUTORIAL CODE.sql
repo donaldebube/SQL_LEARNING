@@ -2278,3 +2278,9 @@ GO
 -- 2.) Data Inconsistency
 -- 3.) DML queries can become slow.
 -- Examples of DML queries are INSERT, UPDATE & DELETE
+
+-- First Normal Form (1NF)
+-- A table is said to be in 1NF, if 
+-- 1.) The data in each column should be atomic. No multiple values, separated by comma.
+-- 2.) The table does not contain any repeating column groups.
+-- 3.) Identify each record uniquely using primary key.
