@@ -2312,3 +2312,9 @@ GO
 -- 2.) Move redundant data to a seperate table
 -- 3.) Create relationships between these tables using foreign keys.
 
+-- PROBLEMS OF DATA REDUNDANCY
+-- 1.) Disk Space Wastage
+-- 2.) Data Inconsistency
+-- 3.) DML queries can become slow.
+-- Examples of DML queries are INSERT, UPDATE & DELETE
+
