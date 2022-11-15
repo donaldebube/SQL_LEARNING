@@ -2307,6 +2307,8 @@ ON E.[Department ID] = D.[Department ID]
 GO
 
 -- Part 53 - 2NF & 3NF
+
+-- For Second Normal Form (2NF)
 -- A table is said to be in the 2NF, if 
 -- 1.) The table meets all the conditions of 1NF
 -- 2.) Move redundant data to a seperate table
@@ -2317,4 +2319,9 @@ GO
 -- 2.) Data Inconsistency
 -- 3.) DML queries can become slow.
 -- Examples of DML queries are INSERT, UPDATE & DELETE
+
+-- For Third Normal Form (3NF)
+-- A table is said to be in 3NF, if the table
+-- 1.) Meets all the conditions of 1NF and 2NF
+-- 2.) Does not contain columns (attributes) that are not fully dependent upon the primary key.
 
