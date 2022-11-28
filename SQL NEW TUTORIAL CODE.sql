@@ -2460,5 +2460,25 @@ PIVOT
 AS PivotTable
 
 -- Part 59 - Subqueries in SQL Server
+-- Create two tables that will be used  to understand this exercise
+-- First Table
+CREATE TABLE tblProductsNew
+(
+    ID INT NOT NULL PRIMARY KEY, -- primary key column
+    Name [NVARCHAR](50) NOT NULL,
+    Description [NVARCHAR](50) NOT NULL
+);
+GO
 
+--
+
+-- Second Table
+CREATE TABLE tblProductSalesNew
+(
+    ID INT NOT NULL PRIMARY KEY, -- primary key column
+    [Product ID] INT FOREIGN KEY REFERENCES tblProductsNew(ID),
+    [Unit Price] INT,
+    [Quantity Sold] INT
+);
+GO
 
