@@ -2532,3 +2532,13 @@ WHERE ID NOT IN
     FROM tblProductSalesNew
 )
 
+-- Using Joins, rewrite this query
+SELECT PN.ID, PN.Name, PN.[Description]
+FROM tblProductSalesNew AS PS
+FULL OUTER JOIN tblProductsNew AS PN
+ON PS.[Product ID] = PN.ID
+WHERE PS.[Product ID] IS NULL
+
+-- Quest
+
+
