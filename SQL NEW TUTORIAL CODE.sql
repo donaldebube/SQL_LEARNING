@@ -2539,6 +2539,25 @@ FULL OUTER JOIN tblProductsNew AS PN
 ON PS.[Product ID] = PN.ID
 WHERE PS.[Product ID] IS NULL
 
--- Quest
+-- Question 2: Get the name of the product and each quantity sold
+SELECT 
+    [Name],
+    (
+        SELECT SUM([Quantity Sold])
+        FROM tblProductSalesNew
+        WHERE [Product ID] = tblProductsNew.ID
+    )
+    AS [Quantity Sold]
+FROM tblProductsNew
+ORDER BY Name
+
+-- Using Joins
+SELECT 
+    tblProductsNew.Name, 
+    SUM(tblProductSalesNew.[Quantity Sold]) AS [Quantity Sold]
+FROM tblProductsNew
+FULL OUTER JOIN tblProductSalesNew
+ON tblProductsNew.ID = tblProductSalesNew.[Product ID]
+GROUP BY tblProductsNew.Name
 
 
