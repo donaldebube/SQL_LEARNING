@@ -2458,3 +2458,5 @@ PIVOT
     IN (India, US, UK)
 )
 AS PivotTable
+
+-- PIVOT OPERATOR STRUCTURE
