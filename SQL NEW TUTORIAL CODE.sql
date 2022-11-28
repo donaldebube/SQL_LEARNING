@@ -2369,3 +2369,13 @@ GO
 
 SELECT *
 FROM tblEmployeeProductSales
+
+-- Using the Group BY query.
+SELECT 
+    [Sales Country], 
+    [Sales Agent], 
+    SUM([Sales Amount]) AS Total
+FROM tblEmployeeProductSales
+GROUP BY [Sales Country], [Sales Agent]
+ORDER BY [Sales Country]
+
