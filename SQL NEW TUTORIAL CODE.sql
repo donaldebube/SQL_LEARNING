@@ -2470,7 +2470,22 @@ CREATE TABLE tblProductsNew
 );
 GO
 
---
+-- Insert items into tblProductsNew table
+INSERT INTO tblProductsNew
+( -- columns to insert data into
+    [Name], [Description]
+)
+VALUES
+( -- first row: values for the columns in the list above
+ 'TV', '52 inch black colorLCD TV'
+),
+( -- second row: values for the columns in the list above
+ 'Laptop', 'Very thin black color acer laptop'
+),
+( -- third row: values for the columns in the list above
+ 'Desktop', 'HP high performance desktop'
+)
+GO
 
 -- Second Table
 CREATE TABLE tblProductSalesNew
