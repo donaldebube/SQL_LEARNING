@@ -2560,4 +2560,5 @@ FULL OUTER JOIN tblProductSalesNew
 ON tblProductsNew.ID = tblProductSalesNew.[Product ID]
 GROUP BY tblProductsNew.Name
 
+-- Note: Most of the time, a JOIN can be used in replace of a subquery.
 
