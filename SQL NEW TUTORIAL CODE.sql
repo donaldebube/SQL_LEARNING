@@ -2459,4 +2459,6 @@ PIVOT
 )
 AS PivotTable
 
--- PIVOT OPERATOR STRUCTURE
+-- Part 59 - Subqueries in SQL Server
+
+
