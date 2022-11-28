@@ -2522,3 +2522,13 @@ FROM tblProductSalesNew
 
 SELECT *
 FROM tblProductsNew
+
+-- Question: From the tblProductSalesNew table, find the item that was not sold using subqueries
+SELECT ID, [Name], [Description]
+FROM tblProductsNew
+WHERE ID NOT IN 
+(
+    SELECT DISTINCT [Product ID]
+    FROM tblProductSalesNew
+)
+
