@@ -2391,5 +2391,43 @@ PIVOT
 )
 AS [Pivot Table]
 
--- p
+-- PIVOT Opeartor example with ID number in table
+-- Create a new table for Pivot example
+CREATE TABLE tblEmployeeProductSalesWithID
+(
+    ID INT NOT NULL,
+    [Sales Agent] [NVARCHAR](50),
+    [Sales Country] [NVARCHAR](50),
+    [Sales Amount] INT
+);
+GO
+
+-- Add values to the table
+-- Insert rows into table 'tblEmployeeProductSales'
+INSERT INTO tblEmployeeProductSalesWithID
+( -- columns to insert data into
+    ID, [Sales Agent], [Sales Country], [Sales Amount]
+)
+VALUES
+(1, 'Tom', 'US', 200),
+(2, 'John', 'US', 180),
+(3, 'John', 'UK', 260),
+(4, 'David', 'India', 450),
+(5, 'Tom', 'India', 350),
+(6, 'David', 'US', 200),
+(7, 'Tom', 'US', 130),
+(8, 'John', 'India', 540),
+(9, 'John', 'UK', 120),
+(10, 'David', 'UK', 220),
+(11, 'John', 'UK', 420),
+(12, 'David', 'US', 320),
+(13, 'Tom', 'US', 340),
+(14, 'Tom', 'UK', 660),
+(15, 'John', 'India', 430),
+(16, 'David', 'India', 230),
+(17, 'David', 'India', 280),
+(18, 'Tom', 'UK', 480),
+(19, 'John', 'US', 360),
+(20, 'David', 'UK', 140)
+GO
 
