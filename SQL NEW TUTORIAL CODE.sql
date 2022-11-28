@@ -2378,4 +2378,18 @@ SELECT
 FROM tblEmployeeProductSales
 GROUP BY [Sales Country], [Sales Agent]
 ORDER BY [Sales Country]
+GO
+
+-- Using the PIVOT Operator
+SELECT [Sales Agent], [India], [US], [UK]
+FROM tblEmployeeProductSales
+PIVOT
+(
+    SUM ([Sales Amount])
+    FOR [Sales Country]
+    IN ([India], [US], [UK])
+)
+AS [Pivot Table]
+
+-- p
 
