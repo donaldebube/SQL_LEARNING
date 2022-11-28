@@ -2440,7 +2440,9 @@ SELECT
     India, 
     US,
      UK
-FROM
+FROM 
+-- If you do not want those ID numbers to affect the final result
+-- Make use of derived tables, like the one directly below
 (
     SELECT 
         [Sales Agent], 
