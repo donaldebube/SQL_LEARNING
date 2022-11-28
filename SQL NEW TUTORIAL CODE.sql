@@ -2473,17 +2473,17 @@ GO
 -- Insert items into tblProductsNew table
 INSERT INTO tblProductsNew
 ( -- columns to insert data into
-    [Name], [Description]
+    ID, [Name], [Description]
 )
 VALUES
 ( -- first row: values for the columns in the list above
- 'TV', '52 inch black colorLCD TV'
+ 1, 'TV', '52 inch black colorLCD TV'
 ),
 ( -- second row: values for the columns in the list above
- 'Laptop', 'Very thin black color acer laptop'
+ 2, 'Laptop', 'Very thin black color acer laptop'
 ),
 ( -- third row: values for the columns in the list above
- 'Desktop', 'HP high performance desktop'
+ 3, 'Desktop', 'HP high performance desktop'
 )
 GO
 
@@ -2497,3 +2497,28 @@ CREATE TABLE tblProductSalesNew
 );
 GO
 
+-- Insert rows into table 'tblProductSalesNew'
+INSERT INTO tblProductSalesNew
+( -- columns to insert data into
+ [ID], [Product ID], [Unit Price], [Quantity Sold]
+)
+VALUES
+( -- first row: values for the columns in the list above
+ 1, 3, 450, 5
+),
+( -- second row: values for the columns in the list above
+ 2, 2, 250, 7
+),
+( -- third row: values for the columns in the list above
+ 3, 3, 450, 4
+),
+( -- forth row: values for the columns in the list above
+ 4, 3, 450, 9
+)
+GO
+
+SELECT *
+FROM tblProductSalesNew
+
+SELECT *
+FROM tblProductsNew
