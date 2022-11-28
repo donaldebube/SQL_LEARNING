@@ -2338,5 +2338,34 @@ CREATE TABLE tblEmployeeProductSales
 );
 GO
 
+-- Add values to the table
+-- Insert rows into table 'tblEmployeeProductSales'
+INSERT INTO tblEmployeeProductSales
+( -- columns to insert data into
+ [Sales Agent], [Sales Country], [Sales Amount]
+)
+VALUES
+('Tom', 'US', 200),
+('John', 'US', 180),
+('John', 'UK', 260),
+('David', 'India', 450),
+('Tom', 'India', 350),
+('David', 'US', 200),
+('Tom', 'US', 130),
+('John', 'India', 540),
+('John', 'UK', 120),
+('David', 'UK', 220),
+('John', 'UK', 420),
+('David', 'US', 320),
+('Tom', 'US', 340),
+('Tom', 'UK', 660),
+('John', 'India', 430),
+('David', 'India', 230),
+('David', 'India', 280),
+('Tom', 'UK', 480),
+('John', 'US', 360),
+('David', 'UK', 140)
+GO
+
 SELECT *
-FROM tblProductSale
+FROM tblEmployeeProductSales
