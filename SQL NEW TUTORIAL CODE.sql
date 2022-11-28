@@ -2325,3 +2325,18 @@ GO
 -- 1.) Meets all the conditions of 1NF and 2NF
 -- 2.) Does not contain columns (attributes) that are not fully dependent upon the primary key.
 
+
+-- Part 54 - Pivot Operator in SQL Server 2008
+-- Pivot is a SQL operator that can be used to turn unique values from one column, into multiple columns in the output, there by effectively rotating a table.
+
+-- Create a new table for Pivot example
+CREATE TABLE tblEmployeeProductSales
+(
+    [Sales Agent] [NVARCHAR](50),
+    [Sales Country] [NVARCHAR](50),
+    [Sales Amount] INT
+);
+GO
+
+SELECT *
+FROM tblProductSale
