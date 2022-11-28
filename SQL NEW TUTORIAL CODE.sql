@@ -2527,7 +2527,7 @@ FROM tblProductsNew
 SELECT ID, [Name], [Description]
 FROM tblProductsNew
 WHERE ID NOT IN 
-(
+( -- This is a subquery because they are always enclosed in a parenthesis
     SELECT DISTINCT [Product ID]
     FROM tblProductSalesNew
 )
