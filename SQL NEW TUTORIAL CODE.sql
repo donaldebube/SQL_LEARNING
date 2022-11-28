@@ -2431,3 +2431,28 @@ VALUES
 (20, 'David', 'UK', 140)
 GO
 
+SELECT *
+FROM tblEmployeeProductSalesWithID
+
+-- How to use the Pivot Opeartor with ID column
+SELECT 
+    [Sales Agent], 
+    India, 
+    US,
+     UK
+FROM
+(
+    SELECT 
+        [Sales Agent], 
+        [Sales Amount], 
+        [Sales Country]
+    FROM tblEmployeeProductSalesWithID
+)
+AS SourceTable
+PIVOT 
+(
+    SUM([Sales Amount])
+    FOR [Sales Country]
+    IN (India, US, UK)
+)
+AS PivotTable
