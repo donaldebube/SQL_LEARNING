@@ -220,10 +220,11 @@ WHERE City = 'Lagos' OR City = 'London' AND AGE >= 20
 SELECT *
 FROM tblPerson
 ORDER BY [First Name] DESC
+
 --Order names in ASCENDING order
 SELECT *
 FROM tblPerson
-ORDER BY Name 
+ORDER BY [First Name] 
 
 --Selecting TOP N or TOP N Percentage of rows
 --TOP N
