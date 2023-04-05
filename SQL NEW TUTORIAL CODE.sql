@@ -10,13 +10,14 @@ CREATE TABLE tblPerson
     Age NUMERIC NOT NULL,
     City NVARCHAR (50) NOT NULL
     -- specify more columns here
-);
+)
+GO
 
 
 -- Insert rows into table 'TableName'
 INSERT INTO tblPerson
 ( -- columns to insert data into
- ID, Name, Email, GenderID, Age, City 
+ [Employee ID], [First Name], Email, GenderID, Age, City 
 )
 VALUES
 ( -- first row: values for the columns in the list above
@@ -140,17 +141,21 @@ ADD [MANAGER ID] VARCHAR(50)
 
 EXEC sp_rename 'tblPerson.MANAGER ID', 'Manager ID'
 
+SELECT *
+FROM tblPerson
+
+
 --Input information into new column
 UPDATE tblPerson
 SET
-   [Manager ID] = NULL
-WHERE Name = 'Rachel'
+   [Manager ID] = 2
+WHERE "First Name" = 'Rachel'
 GO
 
 -- Insert rows into table 'tblPerson'
 INSERT INTO tblPerson
 ( -- columns to insert data into
-    [Employee ID], Name, Email, GenderID, Age, City, [Manager ID]
+    [Employee ID], [First Name], Email, GenderID, Age, City, [Manager ID]
 )
 VALUES
 ( -- first row: values for the columns in the list above
@@ -174,6 +179,7 @@ WHERE Age IN (20,21,25)
 SELECT *
 FROM tblPerson
 WHERE Age BETWEEN 20 AND 28
+
 
 --To specify a pattern
 --Use the LIKE opeartor
