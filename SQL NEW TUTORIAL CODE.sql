@@ -1075,6 +1075,9 @@ SELECT  CAST([Registration Date] AS date) AS [Registration Date], COUNT(ID) AS [
 FROM tblUKCustomers
 GROUP BY CAST([Registration Date] AS date)
 
+SELECT *
+FROM tblUKCustomers
+
 
 --Add Registration Date
 ALTER TABLE tblUKCustomers
