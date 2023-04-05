@@ -219,7 +219,7 @@ WHERE City = 'Lagos' OR City = 'London' AND AGE >= 20
 --Order names in DESCENDING order
 SELECT *
 FROM tblPerson
-ORDER BY Name DESC
+ORDER BY [First Name] DESC
 --Order names in ASCENDING order
 SELECT *
 FROM tblPerson
