@@ -195,15 +195,15 @@ WHERE [First Name] NOT LIKE '%A%'
 --Here, I wanted to find the list of names that started with the letter 'A','M' and 'T'
 SELECT *
 FROM tblPerson
-WHERE Name LIKE '[AMT]%'
+WHERE [First Name] LIKE '[AMT]%'
 --Here, I wanted to find the list of names that didn't start with 'A','M' or 'T'
 SELECT *
 FROM tblPerson
-WHERE Name NOT LIKE '[AMT]%'
+WHERE [First Name] NOT LIKE '[AMT]%'
 --Here, I wanted to find the list of names that didn't start with 'A','M' or 'T'
 SELECT *
 FROM tblPerson
-WHERE Name LIKE '[^AMT]%'
+WHERE [First Name] LIKE '[^AMT]%'
 
 --Joining multiple conditions using AND and OR operators
 --FOR AND operator ONLY
