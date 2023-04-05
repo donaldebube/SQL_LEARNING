@@ -343,19 +343,15 @@ FROM EmployeeDemographics
 LEFT JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 WHERE EmployeeSalary.EmployeeID is NULL
+GO
 
 --Retrieve only the non matching rows from the right table
 SELECT *
 FROM EmployeeDemographics
 RIGHT JOIN EmployeeSalary
     ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
-WHERE EmployeeSalary.EmployeeID IS  NULL
-
-SELECT *
-FROM EmployeeDemographics
-RIGHT JOIN EmployeeSalary
-    ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 WHERE EmployeeSalary.EmployeeID IS NOT NULL
+GO
 
 
 --Practice Tutorial 14,15,16 and 17 next
@@ -373,13 +369,13 @@ LEFT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
 
 --Right Self Join
-SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
+SELECT E.[First Name] AS [Employee Name], M.[First Name] AS [Manager Name]
 FROM tblPerson E
 RIGHT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
 
 --Inner Self Join
-SELECT E.Name AS [Employee Name], M.Name AS [Manager Name]
+SELECT E.[First Name] AS [Employee Name], M.[First Name] AS [Manager Name]
 FROM tblPerson E
 INNER JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
