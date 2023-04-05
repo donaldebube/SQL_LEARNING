@@ -189,7 +189,7 @@ WHERE Email LIKE 'A%'
 
 SELECT *
 FROM tblPerson
-WHERE Name NOT LIKE '%A%'
+WHERE [First Name] NOT LIKE '%A%'
 
 --To find any character in the bracktes
 --Here, I wanted to find the list of names that started with the letter 'A','M' and 'T'
