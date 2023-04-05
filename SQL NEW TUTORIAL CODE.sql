@@ -834,10 +834,14 @@ FROM EmployeeDemographics
 -- Update rows in table 'TableName'
 UPDATE EmployeeDemographics
 SET
-    [Firstname] = '     Aadamu       '
+    --[Firstname] = '     Aadamu       '
+    Firstname = 'Adamu'
   
-WHERE EmployeeID = 101	/* add search conditions here */
+WHERE EmployeeID = 1014	/* add search conditions here */
 GO
+
+SELECT *
+FROM EmployeeDemographics
 
 --Part 25 - DateTime Functions in SQL
 --DateTime Data Types
