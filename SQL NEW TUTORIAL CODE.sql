@@ -234,6 +234,9 @@ FROM tblPerson
 SELECT TOP 50 PERCENT AGE 
 FROM tblPerson
 GO
+--TOP N PERCENTAGE 
+SELECT Age
+FROM tblPerson
 
 --TUTORIAL 11 (GROUP BY STATEMENT)
 --Grouping rows using Group BY
