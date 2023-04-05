@@ -388,22 +388,22 @@ ON E.[Manager ID] = M.[Employee ID]
 --COALESCE() Function
 
 --Using ISNULL() Function
-SELECT E.Name AS [Employee Name], ISNULL (M.Name,'No Manager') AS [Manager Name] 
+SELECT E.[First Name] AS [Employee Name], ISNULL (M.[First Name],'No Manager') AS [Manager Name] 
 FROM tblPerson E
 LEFT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
 
 --Using CASE Statement
-SELECT E.Name AS [Employee Name],
+SELECT E.[First Name] AS [Employee Name],
 CASE 
-    WHEN M.Name IS NULL THEN 'No Manager' ELSE M.Name
+    WHEN M.[First Name] IS NULL THEN 'No Manager' ELSE M.[First Name]
 END
 FROM tblPerson E
 LEFT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
 
 --Using COALESCE() Function
-SELECT E.Name AS [Employee Name], COALESCE(M.Name, 'No Manager') AS [Manager Name]
+SELECT E.[First Name] AS [Employee Name], COALESCE(M.[First Name], 'No Manager') AS [Manager Name]
 FROM tblPerson E
 LEFT JOIN tblPerson M
 ON E.[Manager ID] = M.[Employee ID]
