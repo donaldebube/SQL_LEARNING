@@ -60,7 +60,36 @@ GO
 
 -- Execute sptempTblEmployeeNSG
 sptempTblEmployeeNSG
+GO
 
+-- CREATE A STORED PROCEDURE THAT WILL PROVIDE NAME, SALARY AND CITY OF EMPLOYEES BUT ADD A PARAMETER
+CREATE PROC sptempTblEmployeeNSC
+@City NVARCHAR(100),
+@Name NVARCHAR(100)
+AS
+BEGIN
+    SELECT NAME, SALARY, CITY
+    FROM #temp_tblEmployee
+    ORDER BY SALARY
+END
+GO
+
+ALTER PROC sptempTblEmployeeNSC
+-- @City NVARCHAR(100),
+@GENDER NVARCHAR(100),
+@ID INT
+AS
+BEGIN
+    SELECT ID, NAME, SALARY, CITY, GENDER
+    FROM #temp_tblEmployee
+    WHERE ID = @ID AND GENDER = @GENDER 
+    --AND CITY = @City
+    -- ORDER BY SALARY
+END
+GO
+
+-- Execute syntax
+sptempTblEmployeeNSC @GENDER = 'Male', @ID = 4
 
 
 
