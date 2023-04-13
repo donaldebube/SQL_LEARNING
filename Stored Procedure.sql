@@ -142,5 +142,7 @@ WHERE GENDER = 'Male'
 SELECT *
 FROM #temp_tblEmployee
 
-
+-- sp_help procedure name can be used to view the information about the stored proced
+-- Check example below
+sp_help spGetEmployeeCountByGender1
 
