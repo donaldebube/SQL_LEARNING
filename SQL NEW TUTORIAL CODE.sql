@@ -462,7 +462,9 @@ FROM tblPerson
  --UNION joins two tables with same number, data types and the order of the columns in the select statement.
 --UNION ALL gets all the duplicates 
 SELECT * 
-FROM tblPerson
+FROM tbl
+
+
 
 --Create new tables for this lessonNew
 -- Create a new table called 'TableName' in schema 'SchemaName'
@@ -576,6 +578,9 @@ BEGIN
     FROM EmployeeDemographics
 END
 GO
+
+SELECT *
+FROM EmployeeDemographics
 
 --To run the stored procedure, just type the name of the 
 --stored proedure and run it
