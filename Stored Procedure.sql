@@ -6,7 +6,10 @@ SELECT *
 INTO #temp_tblEmployee
 FROM tblEmployees1
 
-SELECT TOP 2 *
+-- DROP TABLE #temp_tblEmployee
+-- GO
+
+SELECT *
 FROM #temp_tblEmployee
 
 -- First of all change the column header to full caps
@@ -16,17 +19,23 @@ EXEC sp_rename '#temp_tblEmployee.Department ID', '#temp_tblEmployee.DEPARTMENT 
 -- Insert rows into table '#temp_tblEmployee'
 INSERT INTO #temp_tblEmployee
 ( -- columns to insert data into
- [ID], [NAME], [SALARY], [GENDER], [CITY], [Department ID]
+ [ID], [NAME], [SALARY], [GENDER], [CITY], [DEPARTMENT ID]
 )
 VALUES
 ( -- first row: values for the columns in the list above
- Column1_Value, Column2_Value, Column3_Value
+    7, 'Ayo', 80000, 'Male', 'Lagos', 3
 ),
 ( -- second row: values for the columns in the list above
- Column1_Value, Column2_Value, Column3_Value
+    8, 'Tobi', 89000, 'Female', 'Ogun', 7
+),
+-- third row
+(
+    9, 'Ladi', 100000, 'Male', 'Osun', 2
 )
--- add more rows here
 GO
+
+SELECT *
+FROM #temp_tblEmployee
 
 
 SELECT *
