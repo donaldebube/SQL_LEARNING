@@ -135,7 +135,7 @@ DECLARE @EmployeeTotal INT
 EXEC spGetEmployeeCountByGender1 @Gender = 'Male', @EmployeeCount = @EmployeeTotal OUTPUT
 PRINT @EmployeeTotal
 
-SELECT COUNT(GENDER)
+SELECT COUNT(GENDER) AS [Male Count]
 FROM #temp_tblEmployee
 WHERE GENDER = 'Male'
 
