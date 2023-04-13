@@ -1,4 +1,4 @@
--- Part 18
+-- Part 18 - Stored procedures in sql server   
 
 -- A stored procedure is a group of T-SQL (Transact SQL)statements.
 -- Example 1:
@@ -116,5 +116,6 @@ GO
 sp_helptext sptempTblEmployeeNSG
 
 
--- Part 19 
+-- Part 19 - Stored procedures with output parameters   
+-- To create an SP with output parameter, we use the keywords OUT or OUTPUT
 
