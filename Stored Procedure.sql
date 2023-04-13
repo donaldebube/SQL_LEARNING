@@ -74,6 +74,7 @@ BEGIN
 END
 GO
 
+-- To make changes
 ALTER PROC sptempTblEmployeeNSC
 -- @City NVARCHAR(100),
 @GENDER NVARCHAR(100),
@@ -91,5 +92,7 @@ GO
 -- Execute syntax
 sptempTblEmployeeNSC @GENDER = 'Male', @ID = 4
 
+-- Drop a procedure
+DROP PROC sptempTblEmployeeNSC
 
 
