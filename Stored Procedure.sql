@@ -114,8 +114,37 @@ END
 GO
 
 sp_helptext sptempTblEmployeeNSG
+GO
 
 
 -- Part 19 - Stored procedures with output parameters   
 -- To create an SP with output parameter, we use the keywords OUT or OUTPUT
+
+CREATE PROC spGetEmployeeCountByGender1
+@Gender NVARCHAR (100),
+@EmployeeCount INT output
+AS
+BEGIN
+    SELECT @EmployeeCount = COUNT(ID)
+    FROM #temp_tblEmployee
+    WHERE GENDER = @Gender
+END
+GO
+
+DECLARE @EmployeeTotal INT
+EXEC spGetEmployeeCountByGender1 @Gender = 'Male', @EmployeeCount = @EmployeeTotal OUTPUT
+PRINT @EmployeeTotal
+
+DECLARE @EmployeeTotal INT
+EXEC spGetEmployeeCountByGender1 @Gender = 'Male', @EmployeeCount = @EmployeeTotal OUTPUT
+PRINT @EmployeeTotal
+
+SELECT COUNT(GENDER)
+FROM #temp_tblEmployee
+WHERE GENDER = 'Male'
+
+SELECT *
+FROM #temp_tblEmployee
+
+
 
