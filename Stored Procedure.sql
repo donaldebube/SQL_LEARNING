@@ -34,13 +34,33 @@ VALUES
 )
 GO
 
+INSERT INTO #temp_tblEmployee
+( -- columns to insert data into
+ [ID], [NAME], [SALARY], [GENDER], [CITY], [DEPARTMENT ID]
+)
+VALUES
+( -- first row: values for the columns in the list above
+    10, 'Mike', 100000, 'Male', 'Lagos', 8
+)
+GO
+
 SELECT *
 FROM #temp_tblEmployee
+GO
+
+-- CREATE A STORED PROCEDURE THAT WILL ONLY PROVIDE NAME, SALARY AND GENDER OF EMPLOYEES
+CREATE PROC sptempTblEmployeeNSG
+AS
+BEGIN
+    SELECT NAME, SALARY, GENDER
+    FROM #temp_tblEmployee
+    ORDER BY SALARY
+END
+GO
+
+-- Execute sptempTblEmployeeNSG
+sptempTblEmployeeNSG
 
 
-SELECT *
-INTO #temp_tblPerson
-FROM tblPerson
 
-SELECT *
-FROM #temp_tblPerson
+
