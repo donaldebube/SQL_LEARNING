@@ -133,7 +133,7 @@ SELECT *
 FROM EmployeeDemographics
 ORDER BY EmployeeID
 --Change column name
-EXEC sp_rename 'tblPerson.Employee ID1', 'Employee ID' --'COLUMN'
+EXEC sp_rename 'tblPerson.Employee ID', 'EMPLOYEE ID' --'COLUMN'
 
 --Add Column
 ALTER TABLE tblPerson
@@ -144,6 +144,10 @@ EXEC sp_rename 'tblPerson.MANAGER ID', 'Manager ID'
 SELECT *
 FROM tblPerson
 
+EXEC sp_rename 'tblEmployees1.[tblEmployees1.DEPARTMENT ID]', 'DEPARTMENT ID'
+
+SELECT *
+FROM tblEmployees1
 
 --Input information into new column
 UPDATE tblPerson
@@ -461,8 +465,6 @@ FROM tblPerson
 
  --UNION joins two tables with same number, data types and the order of the columns in the select statement.
 --UNION ALL gets all the duplicates 
-SELECT * 
-FROM tbl
 
 
 

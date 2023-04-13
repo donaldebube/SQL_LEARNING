@@ -6,11 +6,27 @@ SELECT *
 INTO #temp_tblEmployee
 FROM tblEmployees1
 
-SELECT *
+SELECT TOP 2 *
 FROM #temp_tblEmployee
 
--- Add some more rows to the dataset
+-- First of all change the column header to full caps
+EXEC sp_rename '#temp_tblEmployee.Department ID', '#temp_tblEmployee.DEPARTMENT ID';
 
+-- Add some more rows to the dataset
+-- Insert rows into table '#temp_tblEmployee'
+INSERT INTO #temp_tblEmployee
+( -- columns to insert data into
+ [ID], [NAME], [SALARY], [GENDER], [CITY], [Department ID]
+)
+VALUES
+( -- first row: values for the columns in the list above
+ Column1_Value, Column2_Value, Column3_Value
+),
+( -- second row: values for the columns in the list above
+ Column1_Value, Column2_Value, Column3_Value
+)
+-- add more rows here
+GO
 
 
 SELECT *
