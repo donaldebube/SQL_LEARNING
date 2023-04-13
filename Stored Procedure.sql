@@ -1,3 +1,5 @@
+-- Part 18
+
 -- A stored procedure is a group of T-SQL (Transact SQL)statements.
 -- Example 1:
 
@@ -94,5 +96,25 @@ sptempTblEmployeeNSC @GENDER = 'Male', @ID = 4
 
 -- Drop a procedure
 DROP PROC sptempTblEmployeeNSC
+GO
 
+--Use the sp_helptext feature to get the syntax that was used in creating a stored procedure
+sp_helptext sptempTblEmployeeNSC
+GO
+
+-- To encypt a stored procedure, do this!
+ALTER PROC sptempTblEmployeeNSG
+WITH ENCRYPTION
+AS
+BEGIN
+     SELECT NAME, SALARY, GENDER
+    FROM #temp_tblEmployee
+    ORDER BY SALARY
+END
+GO
+
+sp_helptext sptempTblEmployeeNSG
+
+
+-- Part 19 
 
