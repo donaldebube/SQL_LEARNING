@@ -164,3 +164,26 @@ GO
 DECLARE @Total INT
 EXEC spGetTotalCountOfEmployees @Total OUTPUT
 PRINT @Total
+
+
+-- Creating a stored procedure with returns values instead of output parameters
+-- Drop the stored proc first
+DROP PROC spGetTotalCountOfEmployees
+GO
+
+-- Create a new proc with return values
+CREATE PROC spGetTotalCountOfEmployees
+AS
+BEGIN
+    RETURN
+    (
+        SELECT COUNT(ID)
+        FROM #temp_tblEmployee
+    )
+END
+GO
+
+DECLARE @TotalCount INT
+EXEC @TotalCount = spGetTotalCountOfEmployees
+PRINT @TotalCount
+
