@@ -145,4 +145,22 @@ FROM #temp_tblEmployee
 -- sp_help procedure name can be used to view the information about the stored proced
 -- Check example below
 sp_help spGetEmployeeCountByGender1
+GO
 
+
+-- Part 20 - Stored Procedure Output Parametres or return values
+-- Whenever, you execute a stored procedure, it returns an integer status variable.
+-- Usually, zero indicates success, and non-zero indicates failure.
+
+CREATE PROC spGetTotalCountOfEmployees
+@TotalCount INT OUTPUT
+AS
+BEGIN
+    SELECT @TotalCount = COUNT(ID)   
+    FROM #temp_tblEmployee
+END
+GO
+
+DECLARE @Total INT
+EXEC spGetTotalCountOfEmployees @Total OUTPUT
+PRINT @Total
