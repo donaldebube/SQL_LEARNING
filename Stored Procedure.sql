@@ -187,3 +187,9 @@ DECLARE @TotalCount INT
 EXEC @TotalCount = spGetTotalCountOfEmployees
 PRINT @TotalCount
 
+-- Note, RETURN VALUES only return an INTEGER. 
+-- So, it is better to use an output parameter when using a stored procedure because you can specify the value charater for both input value and output values
+-- When using a return value, note that you can ONLY RETURN 1 VALUE even though thiose values are both INTEGERS.
+
+-- But with output parameters, you retun any number of values and any type of value, be it a character type or an integer type.
+
