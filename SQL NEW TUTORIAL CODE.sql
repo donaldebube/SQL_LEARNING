@@ -2582,3 +2582,67 @@ GROUP BY tblProductsNew.Name
 
 -- Note: Most of the time, a JOIN can be used in replace of a subquery.
 
+SELECT *
+FROM tblProduct
+GO
+
+ALTER TABLE tblProduct 
+ADD Description NVARCHAR(100)
+GO
+
+ALTER TABLE tblProduct
+DROP COLUMN Description
+
+
+INSERT INTO tblProduct
+( -- columns to insert data into
+    [Description]
+)
+VALUES
+( -- first row: values for the columns in the list above
+    'Psychology of Money'
+),
+(
+    'Leo Smart'
+),
+(
+    'Bic'
+),
+(
+    'Tip'
+)
+GO
+
+UPDATE tblProduct 
+SET 
+    Description = 'Psychology of Money'
+WHERE [Product ID] = 1
+GO
+
+UPDATE tblProduct 
+SET 
+    Description = 'Leo Smart'
+WHERE [Product ID] = 2
+GO
+
+UPDATE tblProduct 
+SET 
+    Description = 'Bic'
+WHERE [Product ID] = 3
+GO
+
+UPDATE tblProduct 
+SET 
+    Description = 'Tip'
+WHERE [Product ID] = 4
+GO
+
+
+-- EXEC sp_rename 'tblProduct.Unit Price', 'Description', 'COLUMN';
+
+SELECT*
+FROM tblProductSalesNew
+GO
+
+
+sp_helptext tblProduct.
