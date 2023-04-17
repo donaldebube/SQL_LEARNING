@@ -2586,6 +2586,7 @@ SELECT *
 FROM tblProduct
 GO
 
+-- Code to add a column to the table
 ALTER TABLE tblProduct 
 ADD Description NVARCHAR(100)
 GO
