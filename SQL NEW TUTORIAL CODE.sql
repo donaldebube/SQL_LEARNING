@@ -2590,28 +2590,9 @@ ALTER TABLE tblProduct
 ADD Description NVARCHAR(100)
 GO
 
+-- Code to drop a column
 ALTER TABLE tblProduct
 DROP COLUMN Description
-
-
-INSERT INTO tblProduct
-( -- columns to insert data into
-    [Description]
-)
-VALUES
-( -- first row: values for the columns in the list above
-    'Psychology of Money'
-),
-(
-    'Leo Smart'
-),
-(
-    'Bic'
-),
-(
-    'Tip'
-)
-GO
 
 UPDATE tblProduct 
 SET 
