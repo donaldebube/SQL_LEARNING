@@ -2573,12 +2573,14 @@ ORDER BY Name
 
 -- Using Joins
 SELECT 
-    tblProductsNew.Name, 
+    tblProductsNew.Name,
+    tblProductsNew.ID,
     SUM(tblProductSalesNew.[Quantity Sold]) AS [Quantity Sold]
 FROM tblProductsNew
 FULL OUTER JOIN tblProductSalesNew
 ON tblProductsNew.ID = tblProductSalesNew.[Product ID]
-GROUP BY tblProductsNew.Name
+WHERE tblProductSalesNew.[Product ID] = 2
+GROUP BY tblProductsNew.Name, tblProductsNew.ID
 
 -- Note: Most of the time, a JOIN can be used in replace of a subquery.
 
@@ -2595,6 +2597,10 @@ GO
 ALTER TABLE tblProduct
 DROP COLUMN Description
 
+-- ALTER TABLE tblProduct
+-- DROP COLUMN [Unit Price]
+
+-- Code to Add details to the new column created
 UPDATE tblProduct 
 SET 
     Description = 'Psychology of Money'
@@ -2626,5 +2632,5 @@ SELECT*
 FROM tblProductSalesNew
 GO
 
-
-sp_helptext tblProduct.
+SELECT *
+FROM tblProduct
