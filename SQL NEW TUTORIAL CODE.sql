@@ -2641,8 +2641,10 @@ FROM tblStaffInfo
 SELECT *
 FROM tblEmployeeProductSales
 
-SELECT *
+-- To remove duplicate values
+SELECT DISTINCT *
 FROM tblEmployeeProductSalesWithID
+
 
 SELECT *
 FROM tbl
