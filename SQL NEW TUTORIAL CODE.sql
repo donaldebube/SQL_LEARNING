@@ -2634,3 +2634,15 @@ GO
 
 SELECT *
 FROM tblProduct
+
+SELECT *
+FROM tblStaffInfo
+
+SELECT *
+FROM tblEmployeeProductSales
+
+SELECT *
+FROM tblEmployeeProductSalesWithID
+
+SELECT *
+FROM tbl
