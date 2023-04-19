@@ -2646,5 +2646,17 @@ SELECT DISTINCT *
 FROM tblEmployeeProductSalesWithID
 
 
-SELECT *
-FROM tbl
+--Incase there is any duplicate value, use this to give an alert
+IF EXISTS (
+    SELECT *
+    FROM tblEmployeeProductSalesWithID
+    --GROUP BY [Building Types], [State], Town
+    --HAVING COUNT(*) > 1
+)
+BEGIN
+    PRINT 'Duplicate values found!'
+END
+ELSE
+BEGIN
+    PRINT 'No duplicate values found.'
+END
