@@ -2661,11 +2661,6 @@ BEGIN
     PRINT 'No duplicate values found.'
 END
 
--- Tables to export for SSIS practice
--- First Table
-SELECT *
-FROM tblEmployeeProductSalesWithID
-GO
 
 -- To remove duplicate values
 SELECT DISTINCT *
@@ -2684,6 +2679,12 @@ SELECT *
 FROM tblEmployeeProductSalesWithID_NoDuplicate
 GO
 
+-- Tables to export for SSIS practice
+-- First Table
+SELECT *
+FROM tblEmployeeProductSalesWithID_NoDuplicate
+GO
+
 -- Second Table
 SELECT *
 FROM tblDepartment
@@ -2694,16 +2695,6 @@ SELECT *
 FROM tblEmployees1
 GO
 
--- Update rows in table 'TableName'
-UPDATE tblPerson
-SET
-    [First Name] = 'Rachel',
-    [Middle Name] = 'Tosin',
-    [Last Name] = NULL
-    -- add more columns and values here
-WHERE [Employee ID] = 6	/* add search conditions here */
-GO
-
 -- Create a new column
 ALTER TABLE tblEmployeeProductSalesWithID_NoDuplicate
     ADD [Department ID] /*new_column_name*/ INT /*new_column_datatype*/ NULL /*new_column_nullability*/
@@ -2711,4 +2702,8 @@ GO
 
 -- Add department ID to an already existing table
 UPDATE tblEmployeeProductSalesWithID_NoDuplicate
-SET
+SET 
+    [Department ID] = 3
+WHERE ID IN (10, 12, 16, 17)
+GO
+
