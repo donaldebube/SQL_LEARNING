@@ -2660,3 +2660,8 @@ ELSE
 BEGIN
     PRINT 'No duplicate values found.'
 END
+
+-- Tables to export for SSIS practice
+SELECT *
+FROM tblEmployeeProductSalesWithID
+GO
