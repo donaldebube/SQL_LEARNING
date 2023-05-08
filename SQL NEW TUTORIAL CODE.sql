@@ -2667,6 +2667,11 @@ SELECT *
 FROM tblEmployeeProductSalesWithID
 GO
 
+-- To remove duplicate values
+SELECT DISTINCT *
+FROM tblEmployeeProductSalesWithID
+GO
+
 -- Second Table
 SELECT *
 FROM tblDepartment
