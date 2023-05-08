@@ -2693,3 +2693,19 @@ GO
 SELECT *
 FROM tblEmployees1
 GO
+
+-- Update rows in table 'TableName'
+UPDATE tblPerson
+SET
+    [First Name] = 'Rachel',
+    [Middle Name] = 'Tosin',
+    [Last Name] = NULL
+    -- add more columns and values here
+WHERE [Employee ID] = 6	/* add search conditions here */
+GO
+
+-- Create a new column
+
+-- Add department ID to an already existing table
+UPDATE tblEmployeeProductSalesWithID_NoDuplicate
+SET
