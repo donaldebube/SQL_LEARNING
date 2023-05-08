@@ -2705,6 +2705,9 @@ WHERE [Employee ID] = 6	/* add search conditions here */
 GO
 
 -- Create a new column
+ALTER TABLE tblEmployeeProductSalesWithID_NoDuplicate
+    ADD [Department ID] /*new_column_name*/ INT /*new_column_datatype*/ NULL /*new_column_nullability*/
+GO
 
 -- Add department ID to an already existing table
 UPDATE tblEmployeeProductSalesWithID_NoDuplicate
