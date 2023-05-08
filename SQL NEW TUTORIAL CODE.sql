@@ -2667,4 +2667,12 @@ SELECT *
 FROM tblEmployeeProductSalesWithID
 GO
 
+-- Second Table
+SELECT *
+FROM tblDepartment
+GO
 
+-- Third Table
+SELECT *
+FROM tblEmployees1
+GO
