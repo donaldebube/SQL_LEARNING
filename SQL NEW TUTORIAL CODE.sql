@@ -2662,6 +2662,9 @@ BEGIN
 END
 
 -- Tables to export for SSIS practice
+-- First Table
 SELECT *
 FROM tblEmployeeProductSalesWithID
 GO
+
+
