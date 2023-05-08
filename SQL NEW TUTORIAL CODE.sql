@@ -2672,6 +2672,17 @@ SELECT DISTINCT *
 FROM tblEmployeeProductSalesWithID
 GO
 
+-- Create a new table with only these values
+SELECT DISTINCT *
+INTO tblEmployeeProductSalesWithID_NoDuplicate
+FROM tblEmployeeProductSalesWithID
+GO
+
+--
+SELECT *
+FROM tblEmployeeProductSalesWithID_NoDuplicate
+GO
+
 -- Second Table
 SELECT *
 FROM tblDepartment
