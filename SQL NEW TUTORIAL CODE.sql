@@ -2678,7 +2678,8 @@ INTO tblEmployeeProductSalesWithID_NoDuplicate
 FROM tblEmployeeProductSalesWithID
 GO
 
---
+-- Test
+-- It works
 SELECT *
 FROM tblEmployeeProductSalesWithID_NoDuplicate
 GO
