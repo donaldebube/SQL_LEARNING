@@ -2707,3 +2707,37 @@ SET
 WHERE ID IN (10, 12, 16, 17)
 GO
 
+---
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [ID]
+      ,[Sales Agent]
+      ,[Sales Country]
+      ,[Sales Amount]
+      ,[Department ID]
+  FROM [SSIS Target Destination].[dbo].[Load Cust]
+  GO
+
+  -- This just removes the content of the table and not the entire table
+
+  TRUNCATE TABLE [dbo].[Load Cust]
+  GO
+
+  SELECT *
+  FROM [dbo].[Load Cust]
+  --ORDER BY ID DESC
+  GO
+
+-- Script to check Data Type
+SELECT COLUMN_NAME, DATA_TYPE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Load Cust'
+GO
+
+-- To Convert varchar to INT
+SELECT CONVERT(int, ID) AS ID
+FROM [dbo].[Load Cust];
+GO
+
+ALTER TABLE [dbo].[Load Cust]
+ALTER COLUMN ID INT
+GO
