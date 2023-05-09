@@ -2733,11 +2733,7 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'Load Cust'
 GO
 
--- To Convert varchar to INT
-SELECT CONVERT(int, ID) AS ID
-FROM [dbo].[Load Cust];
-GO
-
+-- Script to chnage data type of a column
 ALTER TABLE [dbo].[Load Cust]
 ALTER COLUMN ID INT
 GO
