@@ -2737,3 +2737,9 @@ GO
 ALTER TABLE [dbo].[Load Cust]
 ALTER COLUMN ID INT
 GO
+
+
+-- discount_percentage
+-- rating
+-- rating_count
+-- review_content
