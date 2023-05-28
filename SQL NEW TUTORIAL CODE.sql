@@ -2743,3 +2743,7 @@ GO
 -- rating
 -- rating_count
 -- review_content
+
+SELECT *
+FROM tblEmployees1
+GO
